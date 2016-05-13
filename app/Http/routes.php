@@ -23,3 +23,4 @@ Route::get('client/ticket/{id}', 'ClientController@show');
 
 Route::get('employee', 'EmployeeController@show');
 Route::get('employee/attendance', 'EmployeeController@attshow');
+Route::get('employee/employee_notification', 'EmployeeController@notificationshow');

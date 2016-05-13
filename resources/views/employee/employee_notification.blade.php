@@ -12,7 +12,7 @@
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Attendance <small>update</small></h2>
+                    <h2>Notification Pannel <small>Employee</small></h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -31,40 +31,36 @@
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
-                    <table class="table table-hover">
-                      <thead>
-                        <tr>
-                          <th>#</th>
-                          <th>Employee Name</th>
-                          <th>Status</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <th scope="row">1</th>
-                          <td>Mark</td>
-                          <td>
-                      <p>
-                        Present
-                        <input type="radio" class="flat" name="gender" id="genderM" value="M" checked="" required /> Absent
-                        <input type="radio" class="flat" name="gender" id="genderF" value="F" />
-                      </p></td>
-                        </tr>
-                        
-                      </tbody>
-                    </table>
+                    <br>
+                    <form id="demo-form2" data-parsley-validate="" class="form-horizontal form-label-left" novalidate="">
 
-                  </div>
-				  <div class="form-group">
-                        <div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3">
-                          <button type="submit" class="btn btn-primary">Cancel</button>
-                          <button type="submit" class="btn btn-success">Submit</button>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Title 
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                         <input type="text" class="form-control" disabled="disabled" placeholder="Title">
                         </div>
                       </div>
+            <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Description
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <textarea class="form-control" rows="3" disabled="disabled" placeholder="Notification Description"></textarea>
+                        </div>
+                      </div>
+            <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Attachments
+                        </label>
+                        
+                      </div>
+                      <div class="ln_solid"></div>
+                      
+
+                    </form>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
         @endsection

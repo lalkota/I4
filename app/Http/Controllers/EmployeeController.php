@@ -20,4 +20,9 @@ class EmployeeController extends Controller
     {
         return view('employee.attendance');
     }
+
+     public function notificationshow()
+    {
+        return view('employee.employee_notification');
+    }
 }

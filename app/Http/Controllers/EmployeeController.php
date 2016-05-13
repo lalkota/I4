@@ -21,6 +21,7 @@ class EmployeeController extends Controller
         return view('employee.attendance');
     }
 
+
      public function notificationshow()
     {
         return view('employee.employee_notification');
@@ -29,5 +30,15 @@ class EmployeeController extends Controller
     public function dashboardshow()
     {
         return view('employee.employee_dashboard');
+
+	}
+	public function absenceshow()
+    {
+        return view('employee.employee_absence');
+    }
+
+     public function allowenceshow()
+    {
+        return view('employee.employee_allowence');
     }
 }

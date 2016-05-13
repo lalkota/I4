@@ -20,4 +20,9 @@ class ClientController extends Controller
     {
         return view('client.ticket_status');
     }
+
+    public function createticketshow()
+    {
+        return view('client.create_tickets');
+    }
 }

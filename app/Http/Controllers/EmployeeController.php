@@ -20,4 +20,14 @@ class EmployeeController extends Controller
     {
         return view('employee.attendance');
     }
+
+     public function absenceshow()
+    {
+        return view('employee.employee_absence');
+    }
+
+     public function allowenceshow()
+    {
+        return view('employee.employee_allowence');
+    }
 }

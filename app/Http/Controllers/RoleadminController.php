@@ -6,18 +6,15 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-class ClientController extends Controller
+class RoleadminController extends Controller
 {
     /**
      * show view after login
      */
     public function show()
     {
-        return view('client.client_registration');
+        return view('roleadmin.create_role_admin');
     }
 
-    public function ticketshow()
-    {
-        return view('client.ticket_status');
-    }
+    
 }

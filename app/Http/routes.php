@@ -19,7 +19,8 @@ Route::controllers([
 Route::get('home', 'HomeController@show');
 
 Route::get('client', 'ClientController@show');
-Route::get('client/ticket/{id}', 'ClientController@show');
+Route::get('client/ticket', 'ClientController@ticketshow');
 
 Route::get('employee', 'EmployeeController@show');
 Route::get('employee/attendance', 'EmployeeController@attshow');
+Route::get('roleadmin', 'RoleadminController@show');

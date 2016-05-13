@@ -25,4 +25,9 @@ class EmployeeController extends Controller
     {
         return view('employee.employee_notification');
     }
+
+    public function dashboardshow()
+    {
+        return view('employee.employee_dashboard');
+    }
 }

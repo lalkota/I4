@@ -19,8 +19,14 @@ Route::controllers([
 Route::get('home', 'HomeController@show');
 
 Route::get('client', 'ClientController@show');
-Route::get('client/ticket/{id}', 'ClientController@show');
+Route::get('client/ticket', 'ClientController@ticketshow');
 
 Route::get('employee', 'EmployeeController@show');
 Route::get('employee/attendance', 'EmployeeController@attshow');
+Route::get('employee/employee_dashboard', 'EmployeeController@dashboardshow');
+
 Route::get('employee/employee_notification', 'EmployeeController@notificationshow');
+Route::get('roleadmin', 'RoleadminController@show');
+Route::get('roleadmin/create_project', 'RoleadminController@createprojectshow');
+Route::get('roleadmin/projects_view', 'RoleadminController@viewprojectshow');
+Route::get('roleadmin/projects_dashboard', 'RoleadminController@projectdashboardshow');

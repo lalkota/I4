@@ -41,4 +41,9 @@ class EmployeeController extends Controller
     {
         return view('employee.employee_allowence');
     }
+
+     public function registrationshow()
+    {
+        return view('employee.employe_registration');
+    }
 }

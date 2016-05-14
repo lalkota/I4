@@ -24,17 +24,19 @@ Route::get('client/create_ticket', 'ClientController@createticketshow');
 
 Route::get('employee', 'EmployeeController@show');
 Route::get('employee/attendance', 'EmployeeController@attshow');
-
 Route::get('employee/employee_dashboard', 'EmployeeController@dashboardshow');
-
 Route::get('employee/employee_notification', 'EmployeeController@notificationshow');
-Route::get('roleadmin', 'RoleadminController@show');
-
-Route::get('roleadmin/create_project', 'RoleadminController@createprojectshow');
-Route::get('roleadmin/projects_view', 'RoleadminController@viewprojectshow');
-Route::get('roleadmin/projects_dashboard', 'RoleadminController@projectdashboardshow');
-
 Route::get('employee/employee_absence', 'EmployeeController@absenceshow');
 Route::get('employee/employee_allowence', 'EmployeeController@allowenceshow');
+Route::get('employee/employee_registration', 'EmployeeController@registrationshow');
 
 Route::get('roleadmin', 'RoleadminController@show');
+Route::get('roleadmin', 'RoleadminController@show');
+
+Route::get('project/create_project', 'ProjectController@createprojectshow');
+Route::get('project/projects_view', 'ProjectController@viewprojectshow');
+Route::get('project/projects_dashboard', 'ProjectController@projectdashboardshow');
+Route::get('project/projects_notification', 'ProjectController@projectnotificationdashboardshow');
+Route::get('project/projects_notification_detail', 'ProjectController@projectnotificationdetaildashboardshow');
+
+Route::get('login', 'LoginController@show');

@@ -53,7 +53,7 @@
                         </div>
                       </div>
                       <div class="form-group">
-                        <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Department</label>
+                        <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Designation</label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
                           <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="middle-name">
                         </div>
@@ -117,25 +117,22 @@
                         
                       </div>
             </div>
-            <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Employee Signiture</label>
-                        <div class="col-md-6 col-sm-1 col-xs-12">
-                         <input type="text" value="" style="padding-left:150px;">
+                  <div class="form-group">
+                        <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Date</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <input id="middle-name" class="form-control col-md-7 col-xs-12" type="date" name="middle-name">
                         </div>
-            <label class="control-label col-md-1 col-sm-1 col-xs-12">Date</label>
-                        <div class="col-md-1 col-sm-1 col-xs-12">
-                         <input type="date" value="">
-                        </div>
-                      </div>
-                      </div>
-                      <div class="ln_solid"></div>
+                      </div>      
+                        
+
+                      
                       <div class="form-group">
                         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
                           <button type="submit" class="btn btn-primary">Cancel</button>
                           <button type="submit" class="btn btn-success">Submit</button>
                         </div>
                       </div>
-
+                      <div class="ln_solid"></div>
                     </form>
                   </div>
                 </div>

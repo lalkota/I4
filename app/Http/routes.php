@@ -28,3 +28,5 @@ Route::get('employee/employee_absence', 'EmployeeController@absenceshow');
 Route::get('employee/employee_allowence', 'EmployeeController@allowenceshow');
 
 Route::get('roleadmin', 'RoleadminController@show');
+
+Route::get('login', 'LoginController@show');

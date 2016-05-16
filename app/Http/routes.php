@@ -22,7 +22,8 @@ Route::get('client', 'ClientController@show');
 Route::get('client/ticket', 'ClientController@ticketshow');
 Route::get('client/create_ticket', 'ClientController@createticketshow');
 
-Route::get('employee', 'EmployeeController@show');
+Route::resource('employee', 'EmployeeController');
+
 Route::get('employee/attendance', 'EmployeeController@attshow');
 Route::get('employee/employee_dashboard', 'EmployeeController@dashboardshow');
 Route::get('employee/employee_notification', 'EmployeeController@notificationshow');

@@ -35,11 +35,10 @@
                     <table class="table table-striped projects">
                       <thead>
                         <tr>
-                          <th style="width: 1%">#</th>
-                          <th style="width: 20%">Title</th>
+                          <th>#</th>
                           <th>From</th>
-                          <th>Description</th>
-                          <th style="width: 20%">View</th>
+                          <th>Title</th>
+                          <th>View</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -54,9 +53,7 @@
                           <P>Vijay Kumar</P>
                           </td>
                           
-                          <td>
-                            <p>Work Benches has been successfully engaged in transforming innovative and creative ideas into technical solutions by offering a platform in WEB development, Software development, </p>
-                          </td>
+                          
                           <td>
                             <a href="#" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> View </a>
                           </td>
@@ -72,9 +69,7 @@
                             <P>Vijay Kumar</P>
                           </td>
                           
-                          <td>
-                            <p>Work Benches has been successfully engaged in transforming innovative and creative ideas into technical solutions by offering a platform in WEB development, Software development, </p>
-                          </td>
+                          
                           <td>
                             <a href="#" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> View </a>
                           </td>

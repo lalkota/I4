@@ -49,10 +49,9 @@
                         <thead>
                           <tr class="headings">
                             <th class="column-title">Ticket No </th>
+                            <th class="column-title">Title</th>
                             <th class="column-title">Ticket Date </th>
                             <th class="column-title">Ticket Status</th>
-                            <th class="column-title">Title</th>
-                            <th class="column-title">Description</th>
                             <th class="column-title no-link last"><span class="nobr">Action</span>
                             </th>
                             <th class="bulk-actions" colspan="7">
@@ -64,22 +63,20 @@
                         <tbody>
                           <tr class="odd pointer">
                             <td class=" ">121000039</td>
+                            <td>title</td>
                             <td class=" ">May 23, 2014 11:30:12 PM</td>
                             <td class=" ">121000208 <i class="success fa fa-long-arrow-up"></i>
                             </td>
-                            <td>title</td>
-                            <td>desc</td>
-                            <td class=" last"><a href="#">View</a>
+                            <td class=" last"><a href="#" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> View </a>
                             </td>
                           </tr>
                           <tr class="even pointer">
                             <td class=" ">121000038</td>
+                            <td>title</td>
                             <td class=" ">May 24, 2014 10:55:33 PM</td>
                             <td class=" ">121000203 <i class="success fa fa-long-arrow-up"></i>
                             </td>
-                            <td>title</td>
-                            <td>desc</td>
-                            <td class=" last"><a href="#">View</a>
+                            <td class=" last"><a href="#" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> View </a>
                             </td>
                           </tr>
                           

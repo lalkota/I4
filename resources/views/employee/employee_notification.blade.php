@@ -33,6 +33,20 @@
                   <div class="x_content">
                     <br>
                     <form id="demo-form2" data-parsley-validate="" class="form-horizontal form-label-left" novalidate="">
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">TO</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <select class="select2_multiple form-control select2-hidden-accessible" multiple="" tabindex="-1" aria-hidden="true">
+                            <option>Choose option</option>
+                            <option>Option one</option>
+                            <option>Option two</option>
+                            <option>Option three</option>
+                            <option>Option four</option>
+                            <option>Option five</option>
+                            <option>Option six</option>
+                          </select>
+                        </div>
+                      </div>
 
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Title 
@@ -48,20 +62,28 @@
                           <textarea class="form-control" rows="3" placeholder="Notification Description"></textarea>
                         </div>
                       </div>
-            <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">To</label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <select class="form-control">
-                            <option>Select Employee</option>
-                            <option>Option one</option>
-                            <option>Option two</option>
-                            <option>Option three</option>
-                            <option>Option four</option>
-                          </select>
+            
+                      <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                          <button type="submit" class="btn btn-primary">Cancel</button>
+                          <button type="submit" class="btn btn-success">Submit</button>
                         </div>
-                      </div>
-                      <div class="ln_solid"></div>
-                      
+                      <script src="{{ URL::asset('jquery/dist/jquery.min.js') }}"></script>
+                        <!-- Select2 -->
+    <script>
+      $(document).ready(function() {
+        $(".select2_single").select2({
+          placeholder: "Select a state",
+          allowClear: true
+        });
+        $(".select2_group").select2({});
+        $(".select2_multiple").select2({
+          maximumSelectionLength: 6,
+          placeholder: "With Max Selection limit 6",
+          allowClear: true
+        });
+      });
+    </script>
+    <!-- /Select2 -->
 
                     </form>
                   </div>

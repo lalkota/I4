@@ -41,7 +41,7 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Project Name <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" placeholder="both name(s) e.g Jon Doe" required="required" type="text">
+                          <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" placeholder="Project Name" required="required" type="text">
                         </div>
                       </div>
             <div class="item form-group">
@@ -78,14 +78,16 @@
                         </div>
                       </div>
             <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Employee</label>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Add Member</label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <select class="form-control">
-                            <option>Select employee</option>
+                          <select class="select2_multiple form-control select2-hidden-accessible" multiple="" tabindex="-1" aria-hidden="true">
+                            <option>Select Employee</option>
                             <option>Option one</option>
                             <option>Option two</option>
                             <option>Option three</option>
                             <option>Option four</option>
+                            <option>Option five</option>
+                            <option>Option six</option>
                           </select>
                         </div>
                       </div>
@@ -97,6 +99,23 @@
                           <button id="send" type="submit" class="btn btn-success">Submit</button>
                         </div>
                       </div>
+                      <script src="{{ URL::asset('jquery/dist/jquery.min.js') }}"></script>
+                        <!-- Select2 -->
+    <script>
+      $(document).ready(function() {
+        $(".select2_single").select2({
+          placeholder: "Select a state",
+          allowClear: true
+        });
+        $(".select2_group").select2({});
+        $(".select2_multiple").select2({
+          maximumSelectionLength: 6,
+          placeholder: "With Max Selection limit 6",
+          allowClear: true
+        });
+      });
+    </script>
+    <!-- /Select2 -->
                     </form>
                   </div>
                 </div>
@@ -104,4 +123,5 @@
             </div>
           </div>
         </div>
+
         @endsection

@@ -23,6 +23,19 @@
 
     <!-- Custom Theme Style -->
     <link href="{{ URL::asset('css/custom.css') }}" rel="stylesheet">
+
+    <link href="{{ URL::asset('google-code-prettify/bin/prettify.min.css') }}" rel="stylesheet">
+    <!-- Select2 -->
+    <link href="{{ URL::asset('select2/dist/css/select2.min.css') }}" rel="stylesheet">
+    <!-- Switchery -->
+    <link href="{{ URL::asset('switchery/dist/switchery.min.css') }}" rel="stylesheet">
+    <!-- starrr -->
+    <link href="{{ URL::asset('starrr/dist/starrr.css') }}" rel="stylesheet">
+
+	<!-- FullCalendar -->
+    <link href="{{ URL::asset('fullcalendar/dist/fullcalendar.min.css') }}" rel="stylesheet">
+    <link href="{{ URL::asset('fullcalendar/dist/fullcalendar.print.css') }}" rel="stylesheet" media="print">
+
   </head>
 
   <body class="nav-md">
@@ -232,6 +245,23 @@
 
     <!-- Custom Theme Scripts -->
     <script src="{{ URL::asset('js/custom.js') }}"></script>
+  <!-- Switchery -->
+    <script src="{{ URL::asset('switchery/dist/switchery.min.js') }}"></script>
+    <!-- Select2 -->
+    <script src="{{ URL::asset('select2/dist/js/select2.full.min.js') }}"></script>
+    <!-- Parsley -->
+    <script src="{{ URL::asset('parsleyjs/dist/parsley.min.js') }}"></script>
+    <!-- Autosize -->
+    <script src="{{ URL::asset('autosize/dist/autosize.min.js') }}"></script>
+    <!-- jQuery autocomplete -->
+    <script src="{{ URL::asset('devbridge-autocomplete/dist/jquery.autocomplete.min.js') }}"></script>
+    <!-- starrr -->
+    <script src="{{ URL::asset('starrr/dist/starrr.js') }}"></script>
+
+    
+    <!-- FullCalendar -->
+    <script src="{{ URL::asset('moment/min/moment.min.js') }}"></script>
+    <script src="{{ URL::asset('fullcalendar/dist/fullcalendar.min.js') }}"></script>
 
     <!-- Flot -->
     <script>
@@ -498,5 +528,122 @@
       gauge.setTextField(document.getElementById("gauge-text"));
     </script>
     <!-- /gauge.js -->
+     <script>
+      $(document).ready(function() {
+        $(".stars").starrr();
+
+        $('.stars-existing').starrr({
+          rating: 4
+        });
+
+        $('.stars').on('starrr:change', function (e, value) {
+          $('.stars-count').html(value);
+        });
+
+        $('.stars-existing').on('starrr:change', function (e, value) {
+          $('.stars-count-existing').html(value);
+        });
+      });
+      </script>
+
+      <!-- FullCalendar -->
+    <script>
+      $(window).load(function() {
+        var date = new Date(),
+            d = date.getDate(),
+            m = date.getMonth(),
+            y = date.getFullYear(),
+            started,
+            categoryClass;
+
+        var calendar = $('#calendar').fullCalendar({
+          header: {
+            left: 'prev,next today',
+            center: 'title',
+            right: 'month,agendaWeek,agendaDay'
+          },
+          selectable: true,
+          selectHelper: true,
+          select: function(start, end, allDay) {
+            $('#fc_create').click();
+
+            started = start;
+            ended = end;
+
+            $(".antosubmit").on("click", function() {
+              var title = $("#title").val();
+              if (end) {
+                ended = end;
+              }
+
+              categoryClass = $("#event_type").val();
+
+              if (title) {
+                calendar.fullCalendar('renderEvent', {
+                    title: title,
+                    start: started,
+                    end: end,
+                    allDay: allDay
+                  },
+                  true // make the event "stick"
+                );
+              }
+
+              $('#title').val('');
+
+              calendar.fullCalendar('unselect');
+
+              $('.antoclose').click();
+
+              return false;
+            });
+          },
+          eventClick: function(calEvent, jsEvent, view) {
+            $('#fc_edit').click();
+            $('#title2').val(calEvent.title);
+
+            categoryClass = $("#event_type").val();
+
+            $(".antosubmit2").on("click", function() {
+              calEvent.title = $("#title2").val();
+
+              calendar.fullCalendar('updateEvent', calEvent);
+              $('.antoclose2').click();
+            });
+
+            calendar.fullCalendar('unselect');
+          },
+          editable: true,
+          events: [{
+            title: 'All Day Event',
+            start: new Date(y, m, 1)
+          }, {
+            title: 'Long Event',
+            start: new Date(y, m, d - 5),
+            end: new Date(y, m, d - 2)
+          }, {
+            title: 'Meeting',
+            start: new Date(y, m, d, 10, 30),
+            allDay: false
+          }, {
+            title: 'Lunch',
+            start: new Date(y, m, d + 14, 12, 0),
+            end: new Date(y, m, d, 14, 0),
+            allDay: false
+          }, {
+            title: 'Birthday Party',
+            start: new Date(y, m, d + 1, 19, 0),
+            end: new Date(y, m, d + 1, 22, 30),
+            allDay: false
+          }, {
+            title: 'Click for Google',
+            start: new Date(y, m, 28),
+            end: new Date(y, m, 29),
+            url: 'http://google.com/'
+          }]
+        });
+      });
+    </script>
+    <!-- /FullCalendar -->
   </body>
 </html>

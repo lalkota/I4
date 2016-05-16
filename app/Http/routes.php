@@ -24,9 +24,21 @@ Route::get('client/create_ticket', 'ClientController@createticketshow');
 
 Route::get('employee', 'EmployeeController@show');
 Route::get('employee/attendance', 'EmployeeController@attshow');
+
+Route::get('employee/employee_dashboard', 'EmployeeController@dashboardshow');
+
+Route::get('employee/employee_notification', 'EmployeeController@notificationshow');
+Route::get('roleadmin', 'RoleadminController@show');
+
+Route::get('roleadmin/create_project', 'RoleadminController@createprojectshow');
+Route::get('roleadmin/projects_view', 'RoleadminController@viewprojectshow');
+Route::get('roleadmin/projects_dashboard', 'RoleadminController@projectdashboardshow');
+
 Route::get('employee/employee_absence', 'EmployeeController@absenceshow');
 Route::get('employee/employee_allowence', 'EmployeeController@allowenceshow');
 
 Route::get('roleadmin', 'RoleadminController@show');
 
+
 Route::get('login', 'LoginController@show');
+

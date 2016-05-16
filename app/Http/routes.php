@@ -31,7 +31,6 @@ Route::get('employee/employee_allowence', 'EmployeeController@allowenceshow');
 Route::get('employee/employee_registration', 'EmployeeController@registrationshow');
 
 Route::get('roleadmin', 'RoleadminController@show');
-Route::get('roleadmin', 'RoleadminController@show');
 
 Route::get('project/create_project', 'ProjectController@createprojectshow');
 Route::get('project/projects_view', 'ProjectController@viewprojectshow');

@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAttachmentTable extends Migration
+class CreateRoleTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,12 +12,9 @@ class CreateAttachmentTable extends Migration
      */
     public function up()
     {
-        Schema::create('attachments', function (Blueprint $table) {
+        Schema::create('role', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id');
-            $table->integer('project_id');
-            $table->string('name');
-            $table->timestamps('created_at');
+            $table->string('title');
         });
     }
 
@@ -28,6 +25,6 @@ class CreateAttachmentTable extends Migration
      */
     public function down()
     {
-        Schema::drop('attachments');
+        Schema::drop('role');
     }
 }

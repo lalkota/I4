@@ -1,61 +1,65 @@
-@extends('app')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<!-- Meta, title, CSS, favicons, etc. -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-@section('content')
-<div class="container-fluid">
-	<div class="row">
-		<div class="col-md-8 col-md-offset-2">
-			<div class="panel panel-default">
-				<div class="panel-heading">Login</div>
-				<div class="panel-body">
-					@if (count($errors) > 0)
-						<div class="alert alert-danger">
-							<strong>Whoops!</strong> There were some problems with your input.<br><br>
-							<ul>
-								@foreach ($errors->all() as $error)
-									<li>{{ $error }}</li>
-								@endforeach
-							</ul>
+	<title>Gentallela Alela! | </title>
+
+	<!-- Bootstrap -->
+	<link href="{{ URL::asset('bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
+	<!-- Font Awesome -->
+	<link href="{{ URL::asset('font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
+
+	<!-- Custom Theme Style -->
+	<link href="{{ URL::asset('css/custom.css') }}" rel="stylesheet">
+</head>
+
+<body style="background:#F7F7F7;">
+<div class="">
+	<a class="hiddenanchor" id="toregister"></a>
+	<a class="hiddenanchor" id="tologin"></a>
+	@if (count($errors) > 0)
+		<div class="alert alert-danger">
+			<strong>Whoops!</strong> There were some problems with your input.<br><br>
+			<ul>
+				@foreach ($errors->all() as $error)
+					<li>{{ $error }}</li>
+				@endforeach
+			</ul>
+		</div>
+	@endif
+	<div id="wrapper">
+		<div id="login" class=" form">
+			<section class="login_content">
+				<form class="form-horizontal" role="form" method="POST" action="{{ url('/auth/login') }}">
+					{!! csrf_field() !!}
+					<h1>Login Form</h1>
+					<div>
+						<input type="text" class="form-control" name="username" placeholder="username" value="{{ old('username') }}"/>
+					</div>
+					<div>
+						<input type="password" class="form-control" name="password" placeholder="Password" />
+					</div>
+					<div>
+						<button type="submit" class="btn btn-default submit">Log in</button>
+						<a class="reset_pass" href="{{ url('/password/email') }}">Lost your password?</a>
+					</div>
+					<div class="clearfix"></div>
+					<div class="separator">
+						<div>
+							<h1><i class="fa fa-paw" style="font-size: 26px;"></i> Gentelella Alela!</h1>
+
+							<p>©2015 All Rights Reserved. Gentelella Alela! is a Bootstrap 3 template. Privacy and Terms</p>
 						</div>
-					@endif
-
-					<form class="form-horizontal" role="form" method="POST" action="{{ url('/auth/login') }}">
-						{!! csrf_field() !!}
-
-						<div class="form-group">
-							<label class="col-md-4 control-label">E-Mail Address</label>
-							<div class="col-md-6">
-								<input type="email" class="form-control" name="email" value="{{ old('email') }}">
-							</div>
-						</div>
-
-						<div class="form-group">
-							<label class="col-md-4 control-label">Password</label>
-							<div class="col-md-6">
-								<input type="password" class="form-control" name="password">
-							</div>
-						</div>
-
-						<div class="form-group">
-							<div class="col-md-6 col-md-offset-4">
-								<div class="checkbox">
-									<label>
-										<input type="checkbox" name="remember"> Remember Me
-									</label>
-								</div>
-							</div>
-						</div>
-
-						<div class="form-group">
-							<div class="col-md-6 col-md-offset-4">
-								<button type="submit" class="btn btn-primary">Login</button>
-
-								<a class="btn btn-link" href="{{ url('/password/email') }}">Forgot Your Password?</a>
-							</div>
-						</div>
-					</form>
-				</div>
-			</div>
+					</div>
+				</form>
+			</section>
 		</div>
 	</div>
 </div>
-@endsection
+</body>
+</html>

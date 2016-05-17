@@ -22,10 +22,14 @@ Route::get('client/ticket', 'ClientController@ticketshow');
 Route::get('client/create_ticket', 'ClientController@createticketshow');
 
 Route::get('employee/attendance', 'EmployeeController@attshow');
+
+// r
 Route::get('employee/employee_dashboard', 'EmployeeController@dashboardshow');
 Route::get('employee/employee_notification', 'EmployeeController@notificationshow');
 Route::get('employee/employee_absence', 'EmployeeController@absenceshow');
 Route::get('employee/employee_allowence', 'EmployeeController@allowenceshow');
+// r
+
 Route::get('employee/employee_registration', 'EmployeeController@registrationshow');
 Route::resource('employee', 'EmployeeController');
 

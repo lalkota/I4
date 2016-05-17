@@ -41,7 +41,7 @@
                   </div>
                   <div class="x_content">
 
-                    <form  method="POST" action="http://localhost/I4/public/employee" class="form-horizontal form-label-left" novalidate>
+                    <form  method="POST" action="http://localhost/I4/public/client" class="form-horizontal form-label-left" novalidate>
 
                       <div class="item form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Employee Name <span class="required">*</span>

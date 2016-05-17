@@ -17,9 +17,11 @@ Route::controllers([
 ]);
 
 
-Route::get('client', 'ClientController@show');
+//Route::get('client', 'ClientController@show');
+Route::resource('client', 'ClientController');
 Route::get('client/ticket', 'ClientController@ticketshow');
 Route::get('client/create_ticket', 'ClientController@createticketshow');
+
 
 Route::get('employee/attendance', 'EmployeeController@attshow');
 Route::get('employee/employee_dashboard', 'EmployeeController@dashboardshow');

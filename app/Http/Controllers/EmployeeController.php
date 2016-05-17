@@ -5,11 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Input;
+use Validator;
+use App\Employee;
+use Illuminate\Support\Facades\Redirect;
 
 class EmployeeController extends Controller
 {
    
-
 
   /**
    * Display a listing of the resource.
@@ -18,7 +21,10 @@ class EmployeeController extends Controller
    */
   public function index()
   {
-    //
+    
+    $employees = Employee::all();
+    //return View::make('employee.index', compact('employees'));
+    return view('employee.employee_list', compact('employees'));
   }
 
   /**
@@ -28,7 +34,6 @@ class EmployeeController extends Controller
    */
   public function create()
   {
-    //
     return view('employee.employe_registration');
   }
 
@@ -40,6 +45,21 @@ class EmployeeController extends Controller
   public function store()
   {
     //
+      $input = Input::all();
+
+      $validation = Validator::make($input, Employee::$rules);
+
+      if ($validation->passes())
+      {
+          Employee::create($input);
+
+          return Redirect::route('employee.index');
+      }
+
+      return Redirect::route('employee.create')
+          ->withInput()
+          ->withErrors($validation)
+          ->with('message', 'There were validation errors.');    
   }
 
   /**
@@ -50,7 +70,12 @@ class EmployeeController extends Controller
    */
   public function show($id)
   {
-    //
+      $employee = Employee::find($id);
+      if (is_null($employee))
+      {
+          return Redirect::route('employee.index');
+      }
+      return view('employee.employee_view', compact('employee'));    
   }
 
   /**
@@ -61,7 +86,12 @@ class EmployeeController extends Controller
    */
   public function edit($id)
   {
-    //
+      $employee = Employee::find($id);
+      if (is_null($employee))
+      {
+          return Redirect::route('employee.index');
+      }
+      return view('employee.employee_edit', compact('employee'));
   }
 
   /**
@@ -72,7 +102,18 @@ class EmployeeController extends Controller
    */
   public function update($id)
   {
-    //
+      $input = Input::all();
+      $validation = Validator::make($input, Employee::$rules);
+      if ($validation->passes())
+      {
+          $employee = Employee::find($id);
+          $employee->update($input);
+          return Redirect::route('employee.show', $id);
+      }
+      return Redirect::route('employee.edit', $id)
+          ->withInput()
+          ->withErrors($validation)
+          ->with('message', 'There were validation errors.');    
   }
 
   /**
@@ -83,16 +124,11 @@ class EmployeeController extends Controller
    */
   public function destroy($id)
   {
-    //
+        Employee::find($id)->delete();
+        return Redirect::route('employee.index');    
   }
 
-
-
-
-
-
-
-    /**
+   /**
      * show view after login
      */
     /*

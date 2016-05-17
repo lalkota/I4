@@ -59,48 +59,36 @@
                             </div>
                           </div>
               <div class="form-group">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12">Deadline Date <span class="required">*</span>
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12">End Date <span class="required">*</span>
                             </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
                               <input id="birthday" type="date" class="date-picker form-control col-md-7 col-xs-12" required="required">
                             </div>
                           </div>
              <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Project manager</label>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Client</label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <select class="select2_single form-control" tabindex="-1">
-                            <option></option>
-                            <option value="AK">Alaska</option>
-                            <option value="HI">Hawaii</option>
-                            <option value="CA">California</option>
-                            <option value="NV">Nevada</option>
-                            <option value="OR">Oregon</option>
-                            <option value="WA">Washington</option>
-                            <option value="AZ">Arizona</option>
-                            <option value="CO">Colorado</option>
-                            <option value="ID">Idaho</option>
-                            <option value="MT">Montana</option>
-                            <option value="NE">Nebraska</option>
-                            <option value="NM">New Mexico</option>
-                            <option value="ND">North Dakota</option>
-                            <option value="UT">Utah</option>
-                            <option value="WY">Wyoming</option>
-                            <option value="AR">Arkansas</option>
-                            <option value="IL">Illinois</option>
-                            <option value="IA">Iowa</option>
-                            <option value="KS">Kansas</option>
-                            <option value="KY">Kentucky</option>
-                            <option value="LA">Louisiana</option>
-                            <option value="MN">Minnesota</option>
-                            <option value="MS">Mississippi</option>
-                            <option value="MO">Missouri</option>
-                            <option value="OK">Oklahoma</option>
-                            <option value="SD">South Dakota</option>
-                            <option value="TX">Texas</option>
+                          <select class="form-control">
+                            <option>Select client</option>
+                            <option>Option one</option>
+                            <option>Option two</option>
+                            <option>Option three</option>
+                            <option>Option four</option>
                           </select>
                         </div>
                       </div>
-                      
+            <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Employee</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <select class="form-control">
+                            <option>Select employee</option>
+                            <option>Option one</option>
+                            <option>Option two</option>
+                            <option>Option three</option>
+                            <option>Option four</option>
+                          </select>
+                        </div>
+                      </div>
                       
                       <div class="ln_solid"></div>
                       <div class="form-group">

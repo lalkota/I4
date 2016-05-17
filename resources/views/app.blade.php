@@ -36,6 +36,20 @@
     <link href="{{ URL::asset('fullcalendar/dist/fullcalendar.min.css') }}" rel="stylesheet">
     <link href="{{ URL::asset('fullcalendar/dist/fullcalendar.print.css') }}" rel="stylesheet" media="print">
 
+
+    <!-- FastClick -->
+    <script src="{{ URL::asset('fastclick/lib/fastclick.js') }}"></script>
+    <!-- NProgress -->
+    <script src="{{ URL::asset('nprogress/nprogress.js') }}"></script>
+
+    <!-- Datatables -->
+    <link href="{{ URL::asset('datatables.net-bs/css/dataTables.bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ URL::asset('datatables.net-buttons-bs/css/buttons.bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ URL::asset('datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ URL::asset('datatables.net-responsive-bs/css/responsive.bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ URL::asset('datatables.net-scroller-bs/css/scroller.bootstrap.min.css') }}" rel="stylesheet">
+
+
   </head>
 
   <body class="nav-md">
@@ -262,6 +276,23 @@
     <!-- FullCalendar -->
     <script src="{{ URL::asset('moment/min/moment.min.js') }}"></script>
     <script src="{{ URL::asset('fullcalendar/dist/fullcalendar.min.js') }}"></script>
+
+    <!-- Select2 -->
+    <script>
+      $(document).ready(function() {
+        $(".select2_single").select2({
+          placeholder: "Select a state",
+          allowClear: true
+        });
+        $(".select2_group").select2({});
+        $(".select2_multiple").select2({
+          maximumSelectionLength: 6,
+          placeholder: "With Max Selection limit 6",
+          allowClear: true
+        });
+      });
+    </script>
+    <!-- /Select2 -->
 
     <!-- Flot -->
     <script>
@@ -645,5 +676,90 @@
       });
     </script>
     <!-- /FullCalendar -->
+
+
+    <!-- Datatables -->
+    <script src="{{ URL::asset('datatables.net/js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ URL::asset('datatables.net-bs/js/dataTables.bootstrap.min.js') }}"></script>
+    <script src="{{ URL::asset('datatables.net-buttons/js/dataTables.buttons.min.js') }}"></script>
+    <script src="{{ URL::asset('datatables.net-buttons-bs/js/buttons.bootstrap.min.js') }}"></script>
+    <script src="{{ URL::asset('datatables.net-buttons/js/buttons.flash.min.js') }}"></script>
+    <script src="{{ URL::asset('datatables.net-buttons/js/buttons.html5.min.js') }}"></script>
+    <script src="{{ URL::asset('datatables.net-buttons/js/buttons.print.min.js') }}"></script>
+    <script src="{{ URL::asset('datatables.net-fixedheader/js/dataTables.fixedHeader.min.js') }}"></script>
+    <script src="{{ URL::asset('datatables.net-keytable/js/dataTables.keyTable.min.js') }}"></script>
+    <script src="{{ URL::asset('datatables.net-responsive/js/dataTables.responsive.min.js') }}"></script>
+    <script src="{{ URL::asset('datatables.net-responsive-bs/js/responsive.bootstrap.js') }}"></script>
+    <script src="{{ URL::asset('datatables.net-scroller/js/datatables.scroller.min.js') }}"></script>
+    <script src="{{ URL::asset('jszip/dist/jszip.min.js') }}"></script>
+    <script src="{{ URL::asset('pdfmake/build/pdfmake.min.js') }}"></script>
+    <script src="{{ URL::asset('pdfmake/build/vfs_fonts.js') }}"></script>
+
+    <!-- Datatables -->
+    <script>
+      $(document).ready(function() {
+        var handleDataTableButtons = function() {
+          if ($("#datatable-buttons").length) {
+            $("#datatable-buttons").DataTable({
+              dom: "Bfrtip",
+              buttons: [
+                {
+                  extend: "copy",
+                  className: "btn-sm"
+                },
+                {
+                  extend: "csv",
+                  className: "btn-sm"
+                },
+                {
+                  extend: "excel",
+                  className: "btn-sm"
+                },
+                {
+                  extend: "pdfHtml5",
+                  className: "btn-sm"
+                },
+                {
+                  extend: "print",
+                  className: "btn-sm"
+                },
+              ],
+              responsive: true
+            });
+          }
+        };
+
+        TableManageButtons = function() {
+          "use strict";
+          return {
+            init: function() {
+              handleDataTableButtons();
+            }
+          };
+        }();
+
+        $('#datatable').dataTable();
+        $('#datatable-keytable').DataTable({
+          keys: true
+        });
+
+        $('#datatable-responsive').DataTable();
+
+        $('#datatable-scroller').DataTable({
+          ajax: "js/datatables/json/scroller-demo.json",
+          deferRender: true,
+          scrollY: 380,
+          scrollCollapse: true,
+          scroller: true
+        });
+
+        var table = $('#datatable-fixed-header').DataTable({
+          fixedHeader: true
+        });
+
+        TableManageButtons.init();
+      });
+    </script>
+    <!-- /Datatables -->
   </body>
 </html>

@@ -38,20 +38,27 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Title 
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                         <input type="text" class="form-control" disabled="disabled" placeholder="Title">
+                         <input type="text" class="form-control" placeholder="Title">
                         </div>
                       </div>
             <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Description
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <textarea class="form-control" rows="3" disabled="disabled" placeholder="Notification Description"></textarea>
+                          <textarea class="form-control" rows="3" placeholder="Notification Description"></textarea>
                         </div>
                       </div>
             <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Attachments
-                        </label>
-                        
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">To</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <select class="form-control">
+                            <option>Select Employee</option>
+                            <option>Option one</option>
+                            <option>Option two</option>
+                            <option>Option three</option>
+                            <option>Option four</option>
+                          </select>
+                        </div>
                       </div>
                       <div class="ln_solid"></div>
                       

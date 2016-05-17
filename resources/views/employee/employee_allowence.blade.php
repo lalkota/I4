@@ -7,7 +7,7 @@
 
             <div class="page-title">
               <div class="title_left">
-                <h3>Absence Request</h3>
+                <h3>Allowance</h3>
               </div>
 
               
@@ -34,7 +34,7 @@
                     </ul>
                     <div class="clearfix"></div>
                   </div>
-                  <div class="x_content">
+                  <div class="">
                     <br />
                     <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
 
@@ -53,7 +53,7 @@
                         </div>
                       </div>
                       <div class="form-group">
-                        <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Department</label>
+                        <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Designation</label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
                           <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="middle-name">
                         </div>
@@ -65,7 +65,7 @@
                         </div>
                       </div>
                       <div class="form-group">
-                        <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Type of Allowence</label>
+                        <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Select Allowance</label>
                         <div class="col-md-1 col-sm-1 col-xs-12">
                          <input type="checkbox" value="">Sick
                         </div>
@@ -99,36 +99,37 @@
                         </div>
                       </div>
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">From Date</label>
-                        <div class="col-md-2 col-sm-1 col-xs-12">
-                         <input type="date" value="">
-                        </div>
-            <label class="control-label col-md-1 col-sm-1 col-xs-12">To Date</label>
-                        <div class="col-md-2 col-sm-1 col-xs-12">
-                         <input type="date" value="">
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Reason For Allowence<span class="required">*</span>
-                        </label>
-                        <div class="col-md-9 col-sm-9 col-xs-12">
-                         
-                          <textarea id="textarea" required="required" name="textarea" class="form-control col-md-7 col-xs-12" style="margin: 0px; width: 627px; height: 184px;"></textarea>
                         
-                      </div>
-            </div>
-            <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Employee Signiture</label>
-                        <div class="col-md-6 col-sm-1 col-xs-12">
-                         <input type="text" value="" style="padding-left:150px;">
-                        </div>
-            <label class="control-label col-md-1 col-sm-1 col-xs-12">Date</label>
-                        <div class="col-md-1 col-sm-1 col-xs-12">
+            <label class="control-label col-md-3 col-sm-3 col-xs-12">To Date</label>
+                        <div class="col-md-3 col-sm-3 col-xs-12">
                          <input type="date" value="">
                         </div>
                       </div>
+                      
+            <div class="form-group">
+                        
+            <label class="control-label col-md-3 col-sm-3 col-xs-12">Date</label>
+                        <div class="col-md-3 col-sm-3 col-xs-12">
+                         <input type="date" value="">
+                        </div>
                       </div>
-                      <div class="ln_solid"></div>
+                      
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Select Allowance</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <select class="select2_multiple form-control select2-hidden-accessible" multiple="" tabindex="-1" aria-hidden="true">
+                            <option>Choose option</option>
+                            <option>Option one</option>
+                            <option>Option two</option>
+                            <option>Option three</option>
+                            <option>Option four</option>
+                            <option>Option five</option>
+                            <option>Option six</option>
+                          </select>
+                        </div>
+                      </div>
+                     
                       <div class="form-group">
                         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
                           <button type="submit" class="btn btn-primary">Cancel</button>
@@ -142,4 +143,24 @@
               </div>
             </div>
           </div>
+          <script src="{{ URL::asset('jquery/dist/jquery.min.js') }}"></script>
+    
+
+    <!-- Select2 -->
+    <script>
+      $(document).ready(function() {
+        $(".select2_single").select2({
+          placeholder: "Select a state",
+          allowClear: true
+        });
+        $(".select2_group").select2({});
+        $(".select2_multiple").select2({
+          maximumSelectionLength: 6,
+          placeholder: "With Max Selection limit 6",
+          allowClear: true
+        });
+      });
+    </script>
+    <!-- /Select2 -->
+
 @endsection

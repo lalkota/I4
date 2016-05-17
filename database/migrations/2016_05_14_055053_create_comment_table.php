@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTicketTable extends Migration
+class CreateCommentTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,12 +12,12 @@ class CreateTicketTable extends Migration
      */
     public function up()
     {
-        Schema::create('tickets', function (Blueprint $table) {
+        Schema::create('comment', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id');
+            $table->integer('emp_id');
+            $table->text('comment');
             $table->integer('project_id');
-            $table->string('name');
-            $table->timestamps('created_at');
+            $table->timestamp('created_date');
         });
     }
 
@@ -28,6 +28,6 @@ class CreateTicketTable extends Migration
      */
     public function down()
     {
-        Schema::drop('tickets');
+        Schema::drop('comment');
     }
 }

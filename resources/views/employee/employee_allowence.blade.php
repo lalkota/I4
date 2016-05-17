@@ -64,57 +64,7 @@
                           <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="middle-name">
                         </div>
                       </div>
-                      <div class="form-group">
-                        <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Select Allowance</label>
-                        <div class="col-md-1 col-sm-1 col-xs-12">
-                         <input type="checkbox" value="">Sick
-                        </div>
-            <div class="col-md-1 col-sm-1 col-xs-12">
-                         <input type="checkbox" value="">Vacation
-                        </div>
-            <div class="col-md-2 col-sm-1 col-xs-12" style="margin-right: -67px;" >
-                         <input type="checkbox" value="">Bereavement
-                        </div>
-            <div class="col-md-2 col-sm-1 col-xs-12"  >
-                         <input type="checkbox" value="">Time off without pay
-                        </div>
-            <div class="col-md-2 col-sm-1 col-xs-12"  >
-                         <input type="checkbox" value="">Military
-                        </div>
-            
-                      </div>
-            <div class="form-group">
-                        <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12"></label>
-            <div class="col-md-1 col-sm-1 col-xs-12">
-                         <input type="checkbox" value="">Military
-                        </div>
-            <div class="col-md-2 col-sm-1 col-xs-12" style="margin-right: -67px;">
-                         <input type="checkbox" value="">Jury Duty
-                        </div>
-            <div class="col-md-2 col-sm-1 col-xs-12">
-                         <input type="checkbox" value="">Maternity/paternity
-                        </div>
-            <div class="col-md-1 col-sm-1 col-xs-12">
-                         <input type="checkbox" value="">Other
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        
-            <label class="control-label col-md-3 col-sm-3 col-xs-12">To Date</label>
-                        <div class="col-md-3 col-sm-3 col-xs-12">
-                         <input type="date" value="">
-                        </div>
-                      </div>
                       
-            <div class="form-group">
-                        
-            <label class="control-label col-md-3 col-sm-3 col-xs-12">Date</label>
-                        <div class="col-md-3 col-sm-3 col-xs-12">
-                         <input type="date" value="">
-                        </div>
-                      </div>
-                      
-
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Select Allowance</label>
                         <div class="col-md-9 col-sm-9 col-xs-12">

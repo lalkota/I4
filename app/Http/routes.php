@@ -16,21 +16,21 @@ Route::controllers([
     'password' => 'Auth\PasswordController',
 ]);
 
-Route::get('home', 'HomeController@show');
 
 Route::get('client', 'ClientController@show');
 Route::get('client/ticket', 'ClientController@ticketshow');
 Route::get('client/create_ticket', 'ClientController@createticketshow');
 
-Route::get('employee', 'EmployeeController@show');
 Route::get('employee/attendance', 'EmployeeController@attshow');
 Route::get('employee/employee_dashboard', 'EmployeeController@dashboardshow');
 Route::get('employee/employee_notification', 'EmployeeController@notificationshow');
 Route::get('employee/employee_absence', 'EmployeeController@absenceshow');
 Route::get('employee/employee_allowence', 'EmployeeController@allowenceshow');
 Route::get('employee/employee_registration', 'EmployeeController@registrationshow');
+Route::resource('employee', 'EmployeeController');
 
 
+Route::get('roleadmin', 'RoleadminController@show');
 
 Route::get('project/create_project', 'ProjectController@createprojectshow');
 Route::get('project/projects_view', 'ProjectController@viewprojectshow');

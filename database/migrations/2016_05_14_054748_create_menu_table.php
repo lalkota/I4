@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAttendanceTable extends Migration
+class CreateMenuTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,10 +12,11 @@ class CreateAttendanceTable extends Migration
      */
     public function up()
     {
-        Schema::create('attendance', function (Blueprint $table) {
-           $table->increments('id');
-           $table->integer('user_id');
-           $table->timestamps('created_at');
+        Schema::create('menu', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name');
+            $table->integer('role_id');
+            $table->integer('parent_id');
         });
     }
 
@@ -26,6 +27,6 @@ class CreateAttendanceTable extends Migration
      */
     public function down()
     {
-        Schema::drop('attendance');
+        Schema::drop('menu');
     }
 }

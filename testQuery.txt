@@ -1,0 +1,141 @@
+Role
+php artisan make:migration:schema create_role_table --schema="title:string"
+ 
+Employee
+php artisan make:migration:schema create_employee_table --schema="name:string, designation:string, 
+DOB:date, DOJ:date,gross_salary:integer,net_salary:integer, pf:integer, cl:integer, salary_date:date, email:string, contact_no:integer, address:string"
+
+ php artisan make:seed employee
+ 
+client
+php artisan make:migration:schema create_client_table --schema="name:string, email:string, contact_no:integer, address:string" 
+
+Menu
+php artisan make:migration:schema create_menu_table --schema="name:string, role_id:integer"
+
+project
+php artisan make:migration:schema create_project_table --schema="name:string, desc:text, start_date:date, end_date:date, project_manager:integer, client:integer"
+
+peoject_team
+php artisan make:migration:schema create_project_team_table --schema="project_id:integer, employee_id:string"
+
+notification
+php artisan make:migration:schema create_notification_table --schema="title:string, desc:text"
+
+notification_to
+php artisan make:migration:schema create_notification_to_table --schema="notification_id:integer, user_id:integer"
+
+attendance
+php artisan make:migration:schema create_attendance_table --schema="emp_id:integer, attend:integer, current_date:date"
+
+leave
+php artisan make:migration:schema create_leave_table --schema="title:string"
+
+leave_applied
+php artisan make:migration:schema create_leave_applied_table --schema="emp_id:integer, leave_type:integer, applied_date:date"
+
+allowence
+php artisan make:migration:schema create_allowence_table --schema="title:string"
+
+allowence_applied
+php artisan make:migration:schema create_allowence_applied_table --schema="emp_id:integer, allowence_type:integer, applied_date:date"
+
+comments
+php artisan make:migration:schema create_comment_table --schema="emp_id:integer, comment:text, commentted_date:date, project_id:integer"
+
+attachment
+php artisan make:migration:schema create_attachment_table --schema="emp_id:integer, attached_path:string, attached_date:date, project_id:integer"
+ 
+ticket
+php artisan make:migration:schema create_ticket_table --schema="title:string, desc:text, status:string, priority:string, attached_path:string, user_id:integer"
+ 
+ 
+ php artisan make:seed role
+ php artisan make:seed
+ 
+ 
+ 
+ 
+ 
+
+INSERT INTO `role` (`role_id`, `title`) VALUES
+(1, 'super admin'),
+(2, 'role admin'),
+(3, 'project manager'),
+(4, 'employee'),
+(5, 'client');
+
+
+
+INSERT INTO `users` (`id`, `username`, `email`, `password`, `role_id`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'admin', 'admin@gmail.com', '$2y$10$mTFYBcxzxtYPSsT5ruGiCuiUsHLbXNmCxWJy9rTW8QPPAHsLByHf2', 1, NULL, '2016-05-11 00:22:39', '2016-05-11 00:22:39'),
+(2, 'role', 'roleadmin@gmail.com', '$2y$10$mTFYBcxzxtYPSsT5ruGiCuiUsHLbXNmCxWJy9rTW8QPPAHsLByHf2', 2, NULL, '2016-05-11 00:22:39', '2016-05-11 00:22:39'),
+(3, 'manager', 'manager@gmail.com', '$2y$10$mTFYBcxzxtYPSsT5ruGiCuiUsHLbXNmCxWJy9rTW8QPPAHsLByHf2', 3, NULL, '2016-05-11 00:22:39', '2016-05-11 00:22:39'),
+(4, 'employee', 'employee@gmail.com', '$2y$10$mTFYBcxzxtYPSsT5ruGiCuiUsHLbXNmCxWJy9rTW8QPPAHsLByHf2', 4, NULL, '2016-05-11 00:22:39', '2016-05-11 00:22:39'),
+(5, 'client', 'client@gmail.com', '$2y$10$mTFYBcxzxtYPSsT5ruGiCuiUsHLbXNmCxWJy9rTW8QPPAHsLByHf2', 5, NULL, '2016-05-11 00:22:39', '2016-05-11 00:22:39');
+
+
+
+INSERT INTO `role` (`name`, `role_id`, `parent_id`) VALUES
+('Dashboard', 1, 0),
+('Role Admin', 1, 0),
+('Create Role Admin', 1, 0),
+('List Role Admins', 1, 0),
+('View Projects', 1, 0),
+('View By Date', 1, 0),
+('View By Name', 1, 0);
+
+
+
+/*
+SQLyog Community v11.52 (64 bit)
+MySQL - 5.7.12 
+*********************************************************************
+*/
+/*!40101 SET NAMES utf8 */;
+
+insert into `menu` (`id`, `name`, `role_id`, `parent_id`) values('1','Dashboard','1','0');
+insert into `menu` (`id`, `name`, `role_id`, `parent_id`) values('2','Role Admin','1','0');
+insert into `menu` (`id`, `name`, `role_id`, `parent_id`) values('3','Create Role Admin','1','2');
+insert into `menu` (`id`, `name`, `role_id`, `parent_id`) values('4','List Role Admins','1','2');
+insert into `menu` (`id`, `name`, `role_id`, `parent_id`) values('5','View Projects','1','0');
+insert into `menu` (`id`, `name`, `role_id`, `parent_id`) values('6','View By Date','1','5');
+insert into `menu` (`id`, `name`, `role_id`, `parent_id`) values('7','View By Name','1','5');
+
+
+
+insert into `menu` (`id`, `name`, `role_id`, `parent_id`) values('9','Employee','2','0');
+insert into `menu` (`id`, `name`, `role_id`, `parent_id`) values('10','Create Employee','2','9');
+insert into `menu` (`id`, `name`, `role_id`, `parent_id`) values('11','List Employees','2','9');
+insert into `menu` (`id`, `name`, `role_id`, `parent_id`) values('12','Client','2','0');
+insert into `menu` (`id`, `name`, `role_id`, `parent_id`) values('13','Create Client','2','12');
+insert into `menu` (`id`, `name`, `role_id`, `parent_id`) values('14','List Clients','2','12');
+insert into `menu` (`id`, `name`, `role_id`, `parent_id`) values('15','Project','2','0');
+insert into `menu` (`id`, `name`, `role_id`, `parent_id`) values('16','Create Project','2','15');
+insert into `menu` (`id`, `name`, `role_id`, `parent_id`) values('17','List Project','2','15');
+insert into `menu` (`id`, `name`, `role_id`, `parent_id`) values('18','Attendance','2','0');
+insert into `menu` (`id`, `name`, `role_id`, `parent_id`) values('19','Send Notification','2','0');
+
+
+insert into `menu` (`id`, `name`, `role_id`, `parent_id`) values('20','Dashboard','3','0');
+insert into `menu` (`id`, `name`, `role_id`, `parent_id`) values('21','View Projects','3','0');
+insert into `menu` (`id`, `name`, `role_id`, `parent_id`) values('22','View By Date','3','21');
+insert into `menu` (`id`, `name`, `role_id`, `parent_id`) values('23','View By Name','3','21');
+insert into `menu` (`id`, `name`, `role_id`, `parent_id`) values('24','Send Notification','3','0');
+
+
+insert into `menu` (`id`, `name`, `role_id`, `parent_id`) values('25','Dashboard','4','0');
+insert into `menu` (`id`, `name`, `role_id`, `parent_id`) values('26','Abscent Request','4','0');
+insert into `menu` (`id`, `name`, `role_id`, `parent_id`) values('27','Allowence Request','4','0');
+insert into `menu` (`id`, `name`, `role_id`, `parent_id`) values('28','Notifications','4','0');
+
+
+insert into `menu` (`id`, `name`, `role_id`, `parent_id`) values('29','Dashboard','5','0');
+insert into `menu` (`id`, `name`, `role_id`, `parent_id`) values('30','Ticket','5','0');
+insert into `menu` (`id`, `name`, `role_id`, `parent_id`) values('31','Create Ticket','5','0');
+insert into `menu` (`id`, `name`, `role_id`, `parent_id`) values('32','List Tickets','5','0');
+insert into `menu` (`id`, `name`, `role_id`, `parent_id`) values('33','Notifications','5','0');
+
+
+
+

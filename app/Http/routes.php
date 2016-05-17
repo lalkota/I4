@@ -31,8 +31,10 @@ Route::get('employee/employee_allowence', 'EmployeeController@allowenceshow');
 // r
 
 Route::get('employee/employee_registration', 'EmployeeController@registrationshow');
+
 Route::resource('employee', 'EmployeeController');
 
+Route::resource('project', 'ProjectController');
 
 Route::get('roleadmin', 'RoleadminController@show');
 

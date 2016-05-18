@@ -9,6 +9,7 @@ use Input;
 use Validator;
 use App\Employee;
 use Illuminate\Support\Facades\Redirect;
+use App\Role;
 
 class EmployeeController extends Controller
 {
@@ -23,7 +24,7 @@ class EmployeeController extends Controller
   {
     
     $employees = Employee::all();
-    //return View::make('employee.index', compact('employees'));
+    
     return view('employee.employee_list', compact('employees'));
   }
 
@@ -34,7 +35,8 @@ class EmployeeController extends Controller
    */
   public function create()
   {
-    return view('employee.employe_registration');
+    $roles = Role::all();
+    return view('employee.employe_registration', compact('roles'));
   }
 
   /**
@@ -46,7 +48,6 @@ class EmployeeController extends Controller
   {
     //
     $input = Input::all();
-
     $validation = Validator::make($input, Employee::$rules);
 
     if ($validation->passes())

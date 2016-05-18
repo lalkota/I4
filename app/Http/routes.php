@@ -31,12 +31,17 @@ Route::get('employee/employee_allowence', 'EmployeeController@allowenceshow');
 Route::get('employee/employee_registration', 'EmployeeController@registrationshow');
 Route::resource('employee', 'EmployeeController');
 
+
+
 Route::get('roleadmin', 'RoleadminController@show');
 
+Route::resource('project', 'ProjectController');
 Route::get('project/create_project', 'ProjectController@createprojectshow');
 Route::get('project/projects_view', 'ProjectController@viewprojectshow');
 Route::get('project/projects_dashboard', 'ProjectController@projectdashboardshow');
 Route::get('project/projects_notification', 'ProjectController@projectnotificationdashboardshow');
 Route::get('project/projects_notification_detail', 'ProjectController@projectnotificationdetaildashboardshow');
 
+
 Route::get('login', 'LoginController@show');
+

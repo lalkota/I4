@@ -28,4 +28,10 @@ class Employee extends Model
 	'contact_no' => 'required',
 	'address' => 'required'
 	);
+
+
+	public function role() 
+	{
+		return $this->hasOne('App\Role');
+	}
 }

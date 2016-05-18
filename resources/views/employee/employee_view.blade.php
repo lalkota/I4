@@ -27,7 +27,7 @@
                   </div>
                   <div class="x_content form-horizontal form-label-left">
 
-                   <form  method="GET" action="http://localhost/I4/public/employee/employee_dashboard" class="form-horizontal form-label-left" novalidate>
+                   <form  method="GET" action="http://localhost/I4/public/employee/index" class="form-horizontal form-label-left" novalidate>
 
                       <div class="item form-group">
                         

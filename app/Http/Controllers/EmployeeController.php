@@ -33,7 +33,7 @@ class EmployeeController extends Controller
   public function create()
   {
     $roles = Role::all();
-    return view('employee.employe_registration', compact('roles');
+    return view('employee.employe_registration', compact('roles'));
   }
 
   /**

@@ -32,7 +32,7 @@ class ProjectController extends Controller
    */
   public function create()
   {
-     $employees = Employee::all();
+     $employees = Employee::where('designation');
     return view('project.create_project', compact('employees'));
   }
 

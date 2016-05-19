@@ -30,6 +30,18 @@ class Employee extends Model
 	);
 
 
+public function scopeManager($query)
+{
+    return $query->where('designation', 3);
+}
+
+public function scopeEmployee($query)
+{
+    return $query->where('designation', 4);
+}
+
+
+
 	public function role() 
 	{
 		return $this->hasOne('App\Role');

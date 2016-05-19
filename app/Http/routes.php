@@ -18,10 +18,10 @@ Route::controllers([
 
 
 //Route::get('client', 'ClientController@show');
-Route::resource('client', 'ClientController');
+
 Route::get('client/ticket', 'ClientController@ticketshow');
 Route::get('client/create_ticket', 'ClientController@createticketshow');
-
+Route::resource('client', 'ClientController');
 
 Route::get('employee/attendance', 'EmployeeController@attshow');
 
@@ -39,13 +39,13 @@ Route::resource('employee', 'EmployeeController');
 
 Route::get('roleadmin', 'RoleadminController@show');
 
-Route::resource('project', 'ProjectController');
+
 Route::get('project/create_project', 'ProjectController@createprojectshow');
-Route::get('project/projects_view', 'ProjectController@viewprojectshow');
+Route::get('project/projects_list', 'ProjectController@viewprojectshow');
 Route::get('project/projects_dashboard', 'ProjectController@projectdashboardshow');
 Route::get('project/projects_notification', 'ProjectController@projectnotificationdashboardshow');
 Route::get('project/projects_notification_detail', 'ProjectController@projectnotificationdetaildashboardshow');
-
+Route::resource('project', 'ProjectController');
 
 Route::get('login', 'LoginController@show');
 

@@ -7,9 +7,11 @@
   use Input;
   use Validator;
   use App\Employee;
+  use App\Client;
 
   use Illuminate\Support\Facades\Redirect;
   use App\Project;
+  use App\ProjectTeam;
 
   class ProjectController extends Controller
   {
@@ -33,8 +35,12 @@
      */
     public function create()
     {
-       $employees = Employee::all();
-      return view('project.projects_create', compact('employees'));
+       $managers = Employee::manager()->get();
+       $employees = Employee::employee()->get();
+       $clients = Client::all();
+
+
+      return view('project.projects_create',  compact('managers','clients','employees'));
     }
 
     /**
@@ -48,12 +54,15 @@
       //
           $input = Input::all();
 
-          $validation = Validator::make($input, Client::$rules);
+          $validation = Validator::make($input, Project::$rules);
 
           if ($validation->passes())
           {
-              Client::create($input);
-
+              $employees = array_pop($input);
+              $id = Project::create($input)->id;
+              foreach($employees as $employee) {
+                ProjectTeam::create(array('project_id'=>$id,'employee_id'=>$employee));    
+              }
               return Redirect::route('project.index');
           }
 
@@ -76,7 +85,7 @@
         {
             return Redirect::route('project.index');
         }
-        return view('project.projects_view', compact('project'));    
+        return view('project.projects_list', compact('project'));    
       }
 
       /**
@@ -141,7 +150,7 @@
 
       public function viewprojectshow()
       {
-          return view('project.projects_view');
+          return view('project.projects_list');
       }
 
       public function projectdashboardshow()

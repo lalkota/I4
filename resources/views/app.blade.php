@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+  <!DOCTYPE html>
+  <html lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <!-- Meta, title, CSS, favicons, etc. -->
@@ -7,9 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Gentallela Alela! | </title>
+    <title>I4-Communications</title>
 
-    
+
     <!-- Bootstrap -->
     <link href="{{ URL::asset('bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
     <!-- Font Awesome -->
@@ -32,7 +32,7 @@
     <!-- starrr -->
     <link href="{{ URL::asset('starrr/dist/starrr.css') }}" rel="stylesheet">
 
-	<!-- FullCalendar -->
+    <!-- FullCalendar -->
     <link href="{{ URL::asset('fullcalendar/dist/fullcalendar.min.css') }}" rel="stylesheet">
     <link href="{{ URL::asset('fullcalendar/dist/fullcalendar.print.css') }}" rel="stylesheet" media="print">
 
@@ -58,7 +58,7 @@
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-              <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Gentellela Alela!</span></a>
+              <a href="index.html" class="site_title"><span>I4 Communication</span></a>
             </div>
 
             <div class="clearfix"></div>
@@ -77,24 +77,10 @@
 
             <br />
 
-            
-       @include('partial.sidebar')
 
-       <!-- /menu footer buttons -->
-            <div class="sidebar-footer hidden-small">
-              <a data-toggle="tooltip" data-placement="top" title="Settings">
-                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
-              </a>
-              <a data-toggle="tooltip" data-placement="top" title="FullScreen">
-                <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
-              </a>
-              <a data-toggle="tooltip" data-placement="top" title="Lock">
-                <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
-              </a>
-              <a data-toggle="tooltip" data-placement="top" title="Logout">
-                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
-              </a>
-            </div>
+            @include('partial.sidebar')
+
+            <!-- /menu footer buttons -->
             <!-- /menu footer buttons -->
           </div>
         </div>
@@ -140,57 +126,57 @@
                     <li>
                       <a>
                         <span class="image">
-                                          <img src="{{ URL::asset('images/img.jpg') }}" alt="Profile Image" />
-                                      </span>
+                          <img src="{{ URL::asset('images/img.jpg') }}" alt="Profile Image" />
+                        </span>
                         <span>
-                                          <span>John Smith</span>
-                        <span class="time">3 mins ago</span>
+                          <span>John Smith</span>
+                          <span class="time">3 mins ago</span>
                         </span>
                         <span class="message">
-                                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                                      </span>
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
                       </a>
                     </li>
                     <li>
                       <a>
                         <span class="image">
-                                          <img src="{{ URL::asset('images/img.jpg') }}" alt="Profile Image" />
-                                      </span>
+                          <img src="{{ URL::asset('images/img.jpg') }}" alt="Profile Image" />
+                        </span>
                         <span>
-                                          <span>John Smith</span>
-                        <span class="time">3 mins ago</span>
+                          <span>John Smith</span>
+                          <span class="time">3 mins ago</span>
                         </span>
                         <span class="message">
-                                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                                      </span>
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
                       </a>
                     </li>
                     <li>
                       <a>
                         <span class="image">
-                                          <img src="{{ URL::asset('images/img.jpg') }}" alt="Profile Image" />
-                                      </span>
+                          <img src="{{ URL::asset('images/img.jpg') }}" alt="Profile Image" />
+                        </span>
                         <span>
-                                          <span>John Smith</span>
-                        <span class="time">3 mins ago</span>
+                          <span>John Smith</span>
+                          <span class="time">3 mins ago</span>
                         </span>
                         <span class="message">
-                                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                                      </span>
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
                       </a>
                     </li>
                     <li>
                       <a>
                         <span class="image">
-                                          <img src="{{ URL::asset('images/img.jpg') }}" alt="Profile Image" />
-                                      </span>
+                          <img src="{{ URL::asset('images/img.jpg') }}" alt="Profile Image" />
+                        </span>
                         <span>
-                                          <span>John Smith</span>
-                        <span class="time">3 mins ago</span>
+                          <span>John Smith</span>
+                          <span class="time">3 mins ago</span>
                         </span>
                         <span class="message">
-                                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                                      </span>
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
                       </a>
                     </li>
                     <li>
@@ -214,7 +200,7 @@
         <!-- footer content -->
         <footer>
           <div class="pull-right">
-            Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+            I4-Communication Powered by :<a href="http://work-benches.in/"> Work Benches</a>
           </div>
           <div class="clearfix"></div>
         </footer>
@@ -259,7 +245,7 @@
 
     <!-- Custom Theme Scripts -->
     <script src="{{ URL::asset('js/custom.js') }}"></script>
-  <!-- Switchery -->
+    <!-- Switchery -->
     <script src="{{ URL::asset('switchery/dist/switchery.min.js') }}"></script>
     <!-- Select2 -->
     <script src="{{ URL::asset('select2/dist/js/select2.full.min.js') }}"></script>
@@ -272,7 +258,7 @@
     <!-- starrr -->
     <script src="{{ URL::asset('starrr/dist/starrr.js') }}"></script>
 
-    
+
     <!-- FullCalendar -->
     <script src="{{ URL::asset('moment/min/moment.min.js') }}"></script>
     <script src="{{ URL::asset('fullcalendar/dist/fullcalendar.min.js') }}"></script>
@@ -298,70 +284,70 @@
     <script>
       $(document).ready(function() {
         var data1 = [
-          [gd(2012, 1, 1), 17],
-          [gd(2012, 1, 2), 74],
-          [gd(2012, 1, 3), 6],
-          [gd(2012, 1, 4), 39],
-          [gd(2012, 1, 5), 20],
-          [gd(2012, 1, 6), 85],
-          [gd(2012, 1, 7), 7]
+        [gd(2012, 1, 1), 17],
+        [gd(2012, 1, 2), 74],
+        [gd(2012, 1, 3), 6],
+        [gd(2012, 1, 4), 39],
+        [gd(2012, 1, 5), 20],
+        [gd(2012, 1, 6), 85],
+        [gd(2012, 1, 7), 7]
         ];
 
         var data2 = [
-          [gd(2012, 1, 1), 82],
-          [gd(2012, 1, 2), 23],
-          [gd(2012, 1, 3), 66],
-          [gd(2012, 1, 4), 9],
-          [gd(2012, 1, 5), 119],
-          [gd(2012, 1, 6), 6],
-          [gd(2012, 1, 7), 9]
+        [gd(2012, 1, 1), 82],
+        [gd(2012, 1, 2), 23],
+        [gd(2012, 1, 3), 66],
+        [gd(2012, 1, 4), 9],
+        [gd(2012, 1, 5), 119],
+        [gd(2012, 1, 6), 6],
+        [gd(2012, 1, 7), 9]
         ];
         $("#canvas_dahs").length && $.plot($("#canvas_dahs"), [
           data1, data2
-        ], {
-          series: {
-            lines: {
-              show: false,
-              fill: true
+          ], {
+            series: {
+              lines: {
+                show: false,
+                fill: true
+              },
+              splines: {
+                show: true,
+                tension: 0.4,
+                lineWidth: 1,
+                fill: 0.4
+              },
+              points: {
+                radius: 0,
+                show: true
+              },
+              shadowSize: 2
             },
-            splines: {
-              show: true,
-              tension: 0.4,
-              lineWidth: 1,
-              fill: 0.4
+            grid: {
+              verticalLines: true,
+              hoverable: true,
+              clickable: true,
+              tickColor: "#d5d5d5",
+              borderWidth: 1,
+              color: '#fff'
             },
-            points: {
-              radius: 0,
-              show: true
+            colors: ["rgba(38, 185, 154, 0.38)", "rgba(3, 88, 106, 0.38)"],
+            xaxis: {
+              tickColor: "rgba(51, 51, 51, 0.06)",
+              mode: "time",
+              tickSize: [1, "day"],
+              //tickLength: 10,
+              axisLabel: "Date",
+              axisLabelUseCanvas: true,
+              axisLabelFontSizePixels: 12,
+              axisLabelFontFamily: 'Verdana, Arial',
+              axisLabelPadding: 10
             },
-            shadowSize: 2
-          },
-          grid: {
-            verticalLines: true,
-            hoverable: true,
-            clickable: true,
-            tickColor: "#d5d5d5",
-            borderWidth: 1,
-            color: '#fff'
-          },
-          colors: ["rgba(38, 185, 154, 0.38)", "rgba(3, 88, 106, 0.38)"],
-          xaxis: {
-            tickColor: "rgba(51, 51, 51, 0.06)",
-            mode: "time",
-            tickSize: [1, "day"],
-            //tickLength: 10,
-            axisLabel: "Date",
-            axisLabelUseCanvas: true,
-            axisLabelFontSizePixels: 12,
-            axisLabelFontFamily: 'Verdana, Arial',
-            axisLabelPadding: 10
-          },
-          yaxis: {
-            ticks: 8,
-            tickColor: "rgba(51, 51, 51, 0.06)",
-          },
-          tooltip: false
-        });
+            yaxis: {
+              ticks: 8,
+              tickColor: "rgba(51, 51, 51, 0.06)",
+            },
+            tooltip: false
+          });
 
         function gd(year, month, day) {
           return new Date(year, month - 1, day).getTime();
@@ -399,14 +385,14 @@
     <script>
       $(document).ready(function() {
         var icons = new Skycons({
-            "color": "#73879C"
-          }),
-          list = [
-            "clear-day", "clear-night", "partly-cloudy-day",
-            "partly-cloudy-night", "cloudy", "rain", "sleet", "snow", "wind",
-            "fog"
-          ],
-          i;
+          "color": "#73879C"
+        }),
+        list = [
+        "clear-day", "clear-night", "partly-cloudy-day",
+        "partly-cloudy-night", "cloudy", "rain", "sleet", "snow", "wind",
+        "fog"
+        ],
+        i;
 
         for (i = list.length; i--;)
           icons.set(list[i], list[i]);
@@ -429,27 +415,27 @@
           tooltipFillColor: "rgba(51, 51, 51, 0.55)",
           data: {
             labels: [
-              "Symbian",
-              "Blackberry",
-              "Other",
-              "Android",
-              "IOS"
+            "Symbian",
+            "Blackberry",
+            "Other",
+            "Android",
+            "IOS"
             ],
             datasets: [{
               data: [15, 20, 30, 10, 30],
               backgroundColor: [
-                "#BDC3C7",
-                "#9B59B6",
-                "#E74C3C",
-                "#26B99A",
-                "#3498DB"
+              "#BDC3C7",
+              "#9B59B6",
+              "#E74C3C",
+              "#26B99A",
+              "#3498DB"
               ],
               hoverBackgroundColor: [
-                "#CFD4D8",
-                "#B370CF",
-                "#E95E4F",
-                "#36CAAB",
-                "#49A9EA"
+              "#CFD4D8",
+              "#B370CF",
+              "#E95E4F",
+              "#36CAAB",
+              "#49A9EA"
               ]
             }]
           },
@@ -458,7 +444,7 @@
       });
     </script>
     <!-- /Doughnut Chart -->
-    
+
     <!-- bootstrap-daterangepicker -->
     <script>
       $(document).ready(function() {
@@ -536,22 +522,22 @@
     <!-- gauge.js -->
     <script>
       var opts = {
-          lines: 12,
-          angle: 0,
-          lineWidth: 0.4,
-          pointer: {
-              length: 0.75,
-              strokeWidth: 0.042,
-              color: '#1D212A'
-          },
-          limitMax: 'false',
-          colorStart: '#1ABC9C',
-          colorStop: '#1ABC9C',
-          strokeColor: '#F0F3F3',
-          generateGradient: true
+        lines: 12,
+        angle: 0,
+        lineWidth: 0.4,
+        pointer: {
+          length: 0.75,
+          strokeWidth: 0.042,
+          color: '#1D212A'
+        },
+        limitMax: 'false',
+        colorStart: '#1ABC9C',
+        colorStop: '#1ABC9C',
+        strokeColor: '#F0F3F3',
+        generateGradient: true
       };
       var target = document.getElementById('foo'),
-          gauge = new Gauge(target).setOptions(opts);
+      gauge = new Gauge(target).setOptions(opts);
 
       gauge.maxValue = 6000;
       gauge.animationSpeed = 32;
@@ -559,7 +545,7 @@
       gauge.setTextField(document.getElementById("gauge-text"));
     </script>
     <!-- /gauge.js -->
-     <script>
+    <script>
       $(document).ready(function() {
         $(".stars").starrr();
 
@@ -575,17 +561,17 @@
           $('.stars-count-existing').html(value);
         });
       });
-      </script>
+    </script>
 
-      <!-- FullCalendar -->
+    <!-- FullCalendar -->
     <script>
       $(window).load(function() {
         var date = new Date(),
-            d = date.getDate(),
-            m = date.getMonth(),
-            y = date.getFullYear(),
-            started,
-            categoryClass;
+        d = date.getDate(),
+        m = date.getMonth(),
+        y = date.getFullYear(),
+        started,
+        categoryClass;
 
         var calendar = $('#calendar').fullCalendar({
           header: {
@@ -611,13 +597,13 @@
 
               if (title) {
                 calendar.fullCalendar('renderEvent', {
-                    title: title,
-                    start: started,
-                    end: end,
-                    allDay: allDay
-                  },
-                  true // make the event "stick"
-                );
+                  title: title,
+                  start: started,
+                  end: end,
+                  allDay: allDay
+                },
+                    true // make the event "stick"
+                    );
               }
 
               $('#title').val('');
@@ -703,26 +689,26 @@
             $("#datatable-buttons").DataTable({
               dom: "Bfrtip",
               buttons: [
-                {
-                  extend: "copy",
-                  className: "btn-sm"
-                },
-                {
-                  extend: "csv",
-                  className: "btn-sm"
-                },
-                {
-                  extend: "excel",
-                  className: "btn-sm"
-                },
-                {
-                  extend: "pdfHtml5",
-                  className: "btn-sm"
-                },
-                {
-                  extend: "print",
-                  className: "btn-sm"
-                },
+              {
+                extend: "copy",
+                className: "btn-sm"
+              },
+              {
+                extend: "csv",
+                className: "btn-sm"
+              },
+              {
+                extend: "excel",
+                className: "btn-sm"
+              },
+              {
+                extend: "pdfHtml5",
+                className: "btn-sm"
+              },
+              {
+                extend: "print",
+                className: "btn-sm"
+              },
               ],
               responsive: true
             });
@@ -762,4 +748,4 @@
     </script>
     <!-- /Datatables -->
   </body>
-</html>
+  </html>

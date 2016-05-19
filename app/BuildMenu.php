@@ -26,9 +26,9 @@ class BuildMenu
         $menuList = array();
         foreach($this->menus as $menu) {
             if($menu["parent_id"]) {
-                $menuList[$menu["parent_id"]][$menu["id"]] = array($menu["name"],$menu["url"]);
+                $menuList[$menu["parent_id"]][$menu["id"]] = array($menu["name"],$menu["url"],$menu["icons"]);
             } else {
-                $menuList[$menu["id"]][0] = array($menu["name"],$menu["url"]);
+                $menuList[$menu["id"]][0] = array($menu["name"],$menu["url"],$menu["icons"]);
             }
         }
         return $menuList;

@@ -5,7 +5,7 @@
                 <ul class="nav side-menu">
                 @foreach (Session::get('menu') as $menu)
                   @if (count($menu)>1)
-                      <li><a><i class="fa fa-home"></i> {{ $menu[0][0] }} <span class="fa fa-chevron-down"></span></a>
+                      <li><a><i class="{{$menu[0][2]}}"></i> {{ $menu[0][0] }} <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
                     @foreach( $menu as $key => $item)
                             @if ($key==0)
@@ -17,7 +17,7 @@
                         </ul>
                       </li>
                   @else
-                      <li><a href={{ $menu[0][1] }}><i class="fa fa-home"></i> {{ $menu[0][0] }} <span class="fa fa-chevron-down"></span></a></li>
+                      <li><a href={{ $menu[0][1] }}><i class="{{$menu[0][2]}}"></i> {{ $menu[0][0] }} <span class="fa fa-chevron-down"></span></a></li>
                   @endif
                 @endforeach
                 </ul>

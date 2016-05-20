@@ -6,5 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class ProjectTeam extends Model
 {
-    //
+    protected $table = "project_team";
+	protected $guarded = array('id');
+	public $timestamps  = false;
+
+	protected $fillable = array('project_id', 'employee_id');
 }

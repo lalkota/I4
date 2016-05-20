@@ -11,7 +11,7 @@
                 <div class="col-md-12">
                   <div class="x_panel">
                     <div class="x_title">
-                      <h2>Employee List</h2>
+                      <h2>Role Admin List</h2>
                       <div class="clearfix"></div>
                     </div>
                     <div class="x_content">
@@ -29,25 +29,25 @@
                             </tr>
                           </thead>
                           <tbody>
-                            @foreach ($employees as $employee)
+                            @foreach ($employees as $admin)
                             <tr>
                               <td>#</td>
                               <td>
-                                {{ $employee->name }}
+                                {{ $admin->name }}
                               </td>
                               <td>
-                               {{ $employee->designation }}
+                               {{ $admin->designation }}
                               </td>
                               <td class="project_progress">
-                               {{ $employee->email }}
+                               {{ $admin->email }}
                               </td>
                               <td>
-                                {{ $employee->contact_no  }}
+                                {{ $admin->contact_no  }}
                               </td>
                               <td>
-                                {{ link_to_route('employee.show', 'View', array($employee->id), array('class' => 'btn btn-primary btn-xs fa fa-folder')) }}
-                                {{ link_to_route('employee.edit', 'Edit', array($employee->id), array('class' => 'btn btn-info btn-xs fa fa-pencil')) }}
-                                {{ Form::open(array('method' => 'DELETE', 'route' => array('employee.destroy', $employee->id))) }}                       
+                                {{ link_to_route('admin.show', 'View', array($admin->id), array('class' => 'btn btn-primary btn-xs fa fa-folder')) }}
+                                {{ link_to_route('admin.edit', 'Edit', array($admin->id), array('class' => 'btn btn-info btn-xs fa fa-pencil')) }}
+                                {{ Form::open(array('method' => 'DELETE', 'route' => array('admin.destroy', $admin->id))) }}                       
                                 {{ Form::submit('Delete', array('class' => 'btn btn-danger btn-xs fa fa-trash-o')) }}
                                 {{ Form::close() }}
                               </td>

@@ -7,7 +7,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>Gentallela Alela! | </title>
+	<title>I4-Communication</title>
 
 	<!-- Bootstrap -->
 	<link href="{{ URL::asset('bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
@@ -51,8 +51,8 @@
 					<div class="clearfix"></div>
 					<div class="separator">
 						<div>
-							<h1><i class="fa fa-paw" style="font-size: 26px;"></i> Gentelella Alela!</h1>
-							<p>©2015 All Rights Reserved. Gentelella Alela! is a Bootstrap 3 template. Privacy and Terms</p>
+							<h1>I4 Communication</h1>
+							<p>©2016 All Rights Reserved.</p>
 						</div>
 					</div>
 				</form>

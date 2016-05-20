@@ -9,10 +9,11 @@ use Input;
 use Validator;
 use App\Employee;
 use Illuminate\Support\Facades\Redirect;
+use App\Role;
 
 class EmployeeController extends Controller
 {
-   
+ 
 
   /**
    * Display a listing of the resource.
@@ -21,8 +22,8 @@ class EmployeeController extends Controller
    */
   public function index()
   {
-    
     $employees = Employee::all();
+    
     return view('employee.employee_list', compact('employees'));
   }
 
@@ -34,7 +35,7 @@ class EmployeeController extends Controller
   public function create()
   {
     $roles = Role::all();
-    return view('employee.employe_registration', compact('roles');
+    return view('employee.employe_registration', compact('roles'));
   }
 
   /**
@@ -45,21 +46,20 @@ class EmployeeController extends Controller
   public function store()
   {
     //
-      $input = Input::all();
+    $input = Input::all();
+    $validation = Validator::make($input, Employee::$rules);
 
-      $validation = Validator::make($input, Employee::$rules);
+    if ($validation->passes())
+    {
+      Employee::create($input);
 
-      if ($validation->passes())
-      {
-          Employee::create($input);
+      return Redirect::route('employee.index');
+    }
 
-          return Redirect::route('employee.index');
-      }
-
-      return Redirect::route('employee.create')
-          ->withInput()
-          ->withErrors($validation)
-          ->with('message', 'There were validation errors.');    
+    return Redirect::route('employee.create')
+    ->withInput()
+    ->withErrors($validation)
+    ->with('message', 'There were validation errors.');    
   }
 
   /**
@@ -70,12 +70,12 @@ class EmployeeController extends Controller
    */
   public function show($id)
   {
-      $employee = Employee::find($id);
-      if (is_null($employee))
-      {
-          return Redirect::route('employee.index');
-      }
-      return view('employee.employee_view', compact('employee'));    
+    $employee = Employee::find($id);
+    if (is_null($employee))
+    {
+      return Redirect::route('employee.index');
+    }
+    return view('employee.employee_view', compact('employee'));    
   }
 
   /**
@@ -86,12 +86,12 @@ class EmployeeController extends Controller
    */
   public function edit($id)
   {
-      $employee = Employee::find($id);
-      if (is_null($employee))
-      {
-          return Redirect::route('employee.index');
-      }
-      return view('employee.employee_edit', compact('employee'));
+    $employee = Employee::find($id);
+    if (is_null($employee))
+    {
+      return Redirect::route('employee.index');
+    }
+    return view('employee.employee_edit', compact('employee'));
   }
 
   /**
@@ -102,18 +102,18 @@ class EmployeeController extends Controller
    */
   public function update($id)
   {
-      $input = Input::all();
-      $validation = Validator::make($input, Employee::$rules);
-      if ($validation->passes())
-      {
-          $employee = Employee::find($id);
-          $employee->update($input);
-          return Redirect::route('employee.show', $id);
-      }
-      return Redirect::route('employee.edit', $id)
-          ->withInput()
-          ->withErrors($validation)
-          ->with('message', 'There were validation errors.');    
+    $input = Input::all();
+    $validation = Validator::make($input, Employee::$rules);
+    if ($validation->passes())
+    {
+      $employee = Employee::find($id);
+      $employee->update($input);
+      return Redirect::route('employee.show', $id);
+    }
+    return Redirect::route('employee.edit', $id)
+    ->withInput()
+    ->withErrors($validation)
+    ->with('message', 'There were validation errors.');    
   }
 
   /**
@@ -124,8 +124,8 @@ class EmployeeController extends Controller
    */
   public function destroy($id)
   {
-        Employee::find($id)->delete();
-        return Redirect::route('employee.index');    
+    Employee::find($id)->delete();
+    return Redirect::route('employee.index');    
   }
 
    /**
@@ -135,36 +135,36 @@ class EmployeeController extends Controller
     public function show()
     {
         return view('employee.employe_registration');
-    }*/
+      }*/
 
-     public function attshow()
-    {
+      public function attshow()
+      {
         return view('employee.attendance');
-    }
+      }
 
 
-     public function notificationshow()
-    {
+      public function notificationshow()
+      {
         return view('employee.employee_notification');
-    }
+      }
 
-    public function dashboardshow()
-    {
+      public function dashboardshow()
+      {
         return view('employee.employee_dashboard');
 
-	}
-	public function absenceshow()
-    {
+      }
+      public function absenceshow()
+      {
         return view('employee.employee_absence');
-    }
+      }
 
-     public function allowenceshow()
-    {
+      public function allowenceshow()
+      {
         return view('employee.employee_allowence');
-    }
+      }
 
-     public function registrationshow()
-    {
+      public function registrationshow()
+      {
         return view('employee.employe_registration');
+      }
     }
-}

@@ -24,7 +24,7 @@ class CreateEmployeeTable extends Migration
             $table->integer('cl');
             $table->date('salary_date');
             $table->string('email');
-            $table->integer('contact_no');
+            $table->bigInteger('contact_no');
             $table->string('address');
             $table->timestamp('created_date');
         });

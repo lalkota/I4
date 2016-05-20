@@ -17,7 +17,7 @@ class CreateClientTable extends Migration
             $table->string('name');
             $table->string('company_name');
             $table->string('email');
-            $table->integer('contact_no');
+            $table->bigInteger('contact_no');
             $table->string('address');
             $table->timestamp('created_date');
         });

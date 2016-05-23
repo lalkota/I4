@@ -13,7 +13,7 @@ class RoleadminController extends Controller
      */
     public function show()
     {
-        return view('roleadmin.create_role_admin');
+        return view('roleadmin.projects_dashboard');
     }
 
     public function createprojectshow()

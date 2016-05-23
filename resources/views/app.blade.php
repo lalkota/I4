@@ -278,6 +278,20 @@
         });
       });
     </script>
+
+    <script>
+      $(document).ready(function() {
+        $(".select2_single").select2({
+          placeholder: "Select a state",
+          allowClear: true
+        });
+        $(".select2_group").select2({});
+        $(".select2_notification").select2({
+          placeholder: "Select the Person",
+          allowClear: true
+        });
+      });
+    </script>
     <!-- /Select2 -->
 
     <!-- Flot -->

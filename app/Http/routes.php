@@ -39,9 +39,9 @@ Route::resource('employee', 'EmployeeController');
 
 Route::get('roleadmin', 'RoleadminController@show');
 
-Route::resource('attendance', 'AttendanceController@show');
+Route::resource('attendance', 'AttendanceController');
 
-Route::resource('notification', 'NotificationController@show');
+Route::resource('notification', 'NotificationController');
 
 
 Route::get('project/create_project', 'ProjectController@createprojectshow');

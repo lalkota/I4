@@ -23,7 +23,6 @@ class ClientController extends Controller
      */
     public function index()
     {
-        $clients = Client::all();
         $clients = Client::paginate(3);
         return view('client.client_list', compact('clients'));
     }
@@ -48,10 +47,19 @@ class ClientController extends Controller
     {
         //
         $input = Input::all();
-
         $validation = Validator::make($input, Client::$rules);
-
         if ($validation->passes()) {
+
+            // Must not already exist in the `email` column of `users` table
+            $rules = array('email' => 'unique:users,email');
+            $validator = Validator::make($input, $rules);
+            if ($validator->fails()) {
+                return Redirect::route('client.create')
+                    ->withInput()
+                    ->withErrors($validator)
+                    ->with('message', 'User already exist!');
+            }
+
             $id = Client::create($input)->id;
             \App\User::create(array(
                 'username' => $input["name"],

@@ -17,10 +17,17 @@ class Role extends Model
         return $this->hasMany("App\Menu");
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function children()
     {
         return $this->hasMany('App\Menu', 'parent_id', 'id');
     }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
     public function parent()
     {
         return $this->belongsTo('App\Menu', 'id', 'parent_id');

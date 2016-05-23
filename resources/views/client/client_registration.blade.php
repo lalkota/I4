@@ -25,8 +25,8 @@
               <div class="clearfix"></div>
             </div>
             <div class="x_content">
-
-              <form method="POST" action="http://localhost/I4/public/client" class="form-horizontal form-label-left" novalidate>
+              {{ Form::open(array('method' => 'POST', 'route' => array('client.store'), 'class'=>'form-horizontal form-label-left' )) }}
+              <!--<form method="POST" action="http://localhost/I4/public/client" class="form-horizontal form-label-left" novalidate> -->
 
                 <div class="item form-group">
                   <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Client Name <span class="required">*</span>
@@ -76,7 +76,8 @@
                   </div>
                 </div>
                 
-              </form>
+              <!-- </form> -->
+              {{ Form::close() }}
             </div>
           </div>
         </div>

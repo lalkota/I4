@@ -1,11 +1,12 @@
-  @extends('app')
+@extends('app')
 
 
-  @section('content')
+@section('content')
   <div class="right_col" role="main">
 
-            <div class="">
-              <div class="clearfix"></div>
+    <div class="">
+      <div class="clearfix"></div>
+
 
               <div class="row">
                 <div class="col-md-12">
@@ -36,7 +37,7 @@
                                 {{ $employee->name }}
                               </td>
                               <td>
-                               {{ $employee->designation }}
+                               {{ \App\Employee::find($employee->id)->user->role->title }}
                               </td>
                               <td class="project_progress">
                                {{ $employee->email }}
@@ -64,5 +65,4 @@
               </div>
             </div>
           </div>
-
-          @endsection
+@endsection

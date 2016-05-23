@@ -31,8 +31,8 @@
                   @foreach ($projects as $project)
                   <tr>
                     <td>{{ $project->name }}</td>
-                    <td>{{ $project->project_manager }}</td>
-                    <td>{{ $project->client }}</td> 
+                    <td>{{ $project->manager->name }}</td>
+                    <td>{{ $project->clients->name }}</td>
                     <td>{{ $project->start_date }}</td>
                     <td>{{ $project->end_date }}</td>
                     <td>

@@ -54,6 +54,16 @@
       $validation = Validator::make($input, Employee::$rules);
 
       if ($validation->passes()) {
+        // Must not already exist in the `email` column of `users` table
+        $rules = array('email' => 'unique:users,email');
+        $validator = Validator::make($input, $rules);
+        if ($validator->fails()) {
+          return Redirect::route('employee.create')
+              ->withInput()
+              ->withErrors($validator)
+              ->with('message', 'User already exist!');
+        }
+
         $id = Employee::create($input)->id;
         User::create(array(
           'username' => $input["name"],

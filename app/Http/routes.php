@@ -53,3 +53,7 @@ Route::resource('project', 'ProjectController');
 
 Route::get('login', 'LoginController@show');
 
+
+Route::auth();
+
+Route::get('/home', 'HomeController@index');

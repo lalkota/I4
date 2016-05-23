@@ -22,6 +22,7 @@ class ClientController extends Controller
     {
 
         $clients = Client::all();
+        $clients = Client::paginate(3);
         return view('client.client_list', compact('clients'));
     }
 

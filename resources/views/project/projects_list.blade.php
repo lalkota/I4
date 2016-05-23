@@ -36,19 +36,20 @@
                     <td>{{ $project->start_date }}</td>
                     <td>{{ $project->end_date }}</td>
                     <td>
-                      {{ link_to_route('project.show', ' View', array($project->id), array('class' => 'btn btn-primary fa fa-folder')) }}
+                      {{ link_to_route('project.show', 'View', array($project->id), array('class' => 'btn btn-primary fa fa-folder')) }}
 
-                      {{ link_to_route('project.edit', ' Edit', array($project->id), array('class' => 'btn btn-info  fa fa-pencil')) }}
+                      {{ link_to_route('project.edit', 'Edit', array($project->id), array('class' => 'btn btn-info  fa fa-pencil')) }}
 
-                      {{ Form::open(array('method' => ' DELETE', 'route' => array('project.destroy', $project->id))) }}                       
+                      {{ Form::open(array('method' => 'DELETE', 'route' => array('project.destroy', $project->id))) }}                       
                       {{ Form::submit('Delete', array('class' => 'btn btn-danger fa fa-trash-o')) }}
                       {{ Form::close() }}
-
+                      
                     </td>
                   </tr>
                   @endforeach 
                 </tbody>
               </table>
+              {!! $projects->render() !!}
             <!-- end project list -->
               @endif
             </div>

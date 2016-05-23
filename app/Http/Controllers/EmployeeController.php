@@ -23,7 +23,7 @@ class EmployeeController extends Controller
   public function index()
   {
     $employees = Employee::all();
-    
+    $employees = Employee::paginate(3);
     return view('employee.employee_list', compact('employees'));
   }
 
@@ -139,7 +139,8 @@ class EmployeeController extends Controller
 
       public function attshow()
       {
-        return view('employee.attendance');
+        $employees = Employee::all();
+        return view('employee.attendance', compact('employee'));
       }
 
 

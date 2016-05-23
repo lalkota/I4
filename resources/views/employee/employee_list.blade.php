@@ -45,16 +45,17 @@
                                 {{ $employee->contact_no  }}
                               </td>
                               <td>
-                                {{ link_to_route('employee.show', 'View', array($employee->id), array('class' => 'btn btn-primary btn-xs fa fa-folder')) }}
-                                {{ link_to_route('employee.edit', 'Edit', array($employee->id), array('class' => 'btn btn-info btn-xs fa fa-pencil')) }}
+                                {{ link_to_route('employee.show', ' View', array($employee->id), array('class' => 'btn btn-primary fa fa-folder')) }}
+                                {{ link_to_route('employee.edit', ' Edit', array($employee->id), array('class' => 'btn btn-info fa fa-pencil')) }}
                                 {{ Form::open(array('method' => 'DELETE', 'route' => array('employee.destroy', $employee->id))) }}                       
-                                {{ Form::submit('Delete', array('class' => 'btn btn-danger btn-xs fa fa-trash-o')) }}
+                                {{ Form::submit('Delete', array('class' => 'btn btn-danger fa fa-trash-o')) }}
                                 {{ Form::close() }}
                               </td>
                             </tr>
                             @endforeach                          
                           </tbody>
                         </table>
+                        {!! $employees->render() !!}
                         <!-- end project list -->
                       @endif
                     </div>

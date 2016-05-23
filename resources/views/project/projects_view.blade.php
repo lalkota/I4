@@ -73,14 +73,13 @@
                       </div>
 
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Member </label>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Members :  </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                         @if ($employees->count())
                           @foreach ($employees as $employee)
-
                           @foreach ($team as $emp)
                           @if($emp->employee_id == $employee->id)
-                          {{ Form::label('Member',$employee->name,array('class' => 'form-control col-md-7 col-xs-12')) }}
+                          {{ Form::label('Member',$employee->name) }},
                           @break
                           @endif
                           @endforeach 

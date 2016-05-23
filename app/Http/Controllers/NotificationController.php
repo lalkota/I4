@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
+use App\Notification;
+
 class NotificationController extends Controller
 {
     /**
@@ -13,6 +15,7 @@ class NotificationController extends Controller
      */
     public function show()
     {
+        //$id = Notification::create()->id;
         return view('notification.notification_send');
     }
 

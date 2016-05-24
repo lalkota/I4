@@ -12,20 +12,6 @@
               <div class="clearfix"></div>
             </div>
             <div class="x_content">
-            <form  method="POST" action="http://localhost/I4/public/admin/show_by_date" class="form-horizontal form-label-left" novalidate>
-            <div style="float:right;margin-bottom:10px;">
-            <label class="control-label col-md-2 col-sm-1 col-xs-12" for="from_date">From Date<span class="required">*</span>
-                    </label>
-                    <input id="from_date"  class="control-label col-md-3 col-sm-3 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="from_date" placeholder="Employee Name" required="required" type="date">
-                     <label class="control-label col-md-2 col-sm-1 col-xs-12" for="to_date">To Date<span class="required">*</span>
-                    </label>
-                    <input id="to_date"  class="control-label col-md-3 col-sm-3 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="to_date" placeholder="Employee Name" required="required" type="date">
-                    &nbsp;&nbsp;
-                    <button id="send" type="submit" class="btn btn-success">Submit</button><br />
-                    </form>
-
-                    </div>
-
              @if ($projects->count())
              <table  class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
               <thead>

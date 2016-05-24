@@ -8,6 +8,7 @@ use App\Http\Requests;
 use Input;
 use Validator;
 use App\Employee;
+use App\Project;
 use Illuminate\Support\Facades\Redirect;
 use App\Role;
 
@@ -28,6 +29,7 @@ class SuperadminController extends Controller
         return view('roleadmin.create_role_admin', compact('roles'));
     }
 
+    
     public function show($id)
     {
         
@@ -35,12 +37,15 @@ class SuperadminController extends Controller
             if (is_null($employee))
             {
               $employees = Employee::RoleAdminEmployee()->get();  
+              $employees = Employee::RoleAdminEmployee()->paginate(10);
               return view('roleadmin.role_admin_list', compact('employees'));
             }
-            
+             
             return view('roleadmin.role_admin_view', compact('employee'));
     }
 
+
+   
     public function store()
     {
     //
@@ -89,7 +94,7 @@ class SuperadminController extends Controller
     if ($validation->passes())
     {
       $employee = Employee::find($id);
-      $employee->update($input);
+      $employee->update($employee);
       return Redirect::route('admin.show', $id);
     }
     return Redirect::route('admin.edit', $id)
@@ -98,7 +103,37 @@ class SuperadminController extends Controller
     ->with('message', 'There were validation errors.');    
   }
 
+  
+  public function showProjects()
+  {
 
+    $projects = Project::all();
+    return view('admin.show_by_name', compact('projects'));
+  }
+
+   public function showProjectsByDates()
+  {
+
+    $projects = Project::all();
+    return view('admin.projects_list', compact('projects'));
+  }
+
+  
+  public function showProjectsByDate()
+  {
+
+    $input = Input::all();
+
+    $projects = $input["from_date"]&&$input["to_date"]?Project::where('start_date','>=',$input["from_date"])->where('end_date','<=',$input["to_date"])->get(): Project::all();
+
+    if ($input["from_date"] && $input["to_date"] && count($projects) > 0){
+        return view('admin.show_by_date', compact('projects'));
+    } 
+
+    return view('admin.showed_project_list', compact('projects'));
+  }
+
+    
 
 
 

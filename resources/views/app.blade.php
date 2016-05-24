@@ -663,7 +663,7 @@
     </script>
     <!-- /FullCalendar -->
 
-
+     <script src="{{ URL::asset('jquery/dist/jquery.min.js') }}"></script>
     <!-- Datatables -->
     <script src="{{ URL::asset('datatables.net/js/jquery.dataTables.min.js') }}"></script>
     <script src="{{ URL::asset('datatables.net-bs/js/dataTables.bootstrap.min.js') }}"></script>
@@ -746,6 +746,7 @@
         TableManageButtons.init();
       });
     </script>
+    
     <!-- /Datatables -->
   </body>
   </html>

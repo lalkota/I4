@@ -35,12 +35,20 @@ Route::get('employee/employee_allowence', 'EmployeeController@allowenceshow');
 Route::get('employee/employee_registration', 'EmployeeController@registrationshow');
 Route::resource('employee', 'EmployeeController');
 
+Route::get('admin/show_by_name', 'SuperadminController@showProjects');
+Route::get('admin/show_by_date', 'SuperadminController@showProjectsByDates');
+
+Route::post('admin/show_by_date', 'SuperadminController@showProjectsByDate');
+
 Route::resource('admin', 'SuperadminController');
 
 
 
-
 Route::get('roleadmin', 'RoleadminController@show');
+
+Route::get('attendance', 'AttendanceController@show');
+
+Route::get('notification', 'NotificationController@show');
 
 
 Route::get('project/create_project', 'ProjectController@createprojectshow');

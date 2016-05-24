@@ -55,6 +55,7 @@
                             @endforeach                          
                           </tbody>
                         </table>
+                       {!! $employees->render() !!}
                         <!-- end project list -->
                       @endif
                     </div>

@@ -20,4 +20,11 @@ class Project extends Model
 	'project_manager' => 'required',
 	'client' => 'required'
 	);
+
+
+	public function team()
+	{
+		return $this->hasMany('App\ProjectTeam', 'project_id', 'id');
+	}
+
 }

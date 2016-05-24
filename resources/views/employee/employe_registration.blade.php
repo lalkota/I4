@@ -26,7 +26,8 @@
               </div>
               <div class="x_content">
 
-                <form  method="POST" action="http://localhost/I4/public/employee" class="form-horizontal form-label-left" novalidate>
+                {{ Form::open(array('method' => 'POST', 'route' => array('employee.store'), 'class'=>'form-horizontal form-label-left' )) }}
+                <!--<form  method="POST" action="http://localhost/I4/public/employee" class="form-horizontal form-label-left" novalidate> -->
 
 
                   <div class="item form-group">
@@ -127,7 +128,8 @@
                     <button id="send" type="submit" class="btn btn-success">Submit</button>
                   </div>
                 </div>
-              </form>
+              <!--</form> -->
+              {{ Form::close() }}
             </div>
           </div>
         </div>

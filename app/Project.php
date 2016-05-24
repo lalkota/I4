@@ -27,4 +27,14 @@ class Project extends Model
 		return $this->hasMany('App\ProjectTeam', 'project_id', 'id');
 	}
 
+	public function manager()
+	{
+		return $this->hasOne('App\Employee','id','project_manager');
+	}
+
+	public function clients()
+	{
+		return $this->hasOne('App\Client','id','client');
+	}
+
 }

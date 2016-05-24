@@ -46,9 +46,9 @@ Route::resource('admin', 'SuperadminController');
 
 Route::get('roleadmin', 'RoleadminController@show');
 
-Route::get('attendance', 'AttendanceController@show');
+Route::resource('attendance', 'AttendanceController');
 
-Route::get('notification', 'NotificationController@show');
+Route::resource('notification', 'NotificationController');
 
 
 Route::get('project/create_project', 'ProjectController@createprojectshow');
@@ -60,3 +60,7 @@ Route::resource('project', 'ProjectController');
 
 Route::get('login', 'LoginController@show');
 
+
+Route::auth();
+
+Route::get('/home', 'HomeController@index');

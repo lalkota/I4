@@ -42,6 +42,7 @@ Route::post('admin/show_by_date', 'SuperadminController@showProjectsByDate');
 
 Route::resource('admin', 'SuperadminController');
 
+Route::resource('ticket', 'TicketController');
 
 
 Route::get('roleadmin', 'RoleadminController@show');

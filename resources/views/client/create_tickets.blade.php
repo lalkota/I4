@@ -3,6 +3,18 @@
 
   @section('content')<!-- page content -->
          <div class="right_col" role="main">
+         @section('content')<!-- page content -->
+    <div class="right_col" role="main">
+     @if (count($errors) > 0)
+     <div class="alert alert-danger">
+      <strong>Whoops!</strong> There were some problems with your input.<br><br>
+      <ul>
+        @foreach ($errors->all() as $error)
+        <li>{{ $error }}</li>
+        @endforeach
+      </ul>
+    </div>
+    @endif
             <div class="">
 
               <div class="page-title">
@@ -17,13 +29,13 @@
                     
                     <div class="x_content">
                       <br />
-                      <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+                       {{ Form::open(array('method' => 'POST', 'route' => array('ticket.store'), 'class'=>'form-horizontal form-label-left' )) }}
 
                         <div class="form-group">
-                          <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Title <span class="required">*</span>
+                          <label class="control-label col-md-3 col-sm-3 col-xs-12" for="title">Title <span class="required">*</span>
                           </label>
                           <div class="col-md-6 col-sm-6 col-xs-12">
-                            <input type="text" id="first-name" required="required" class="form-control col-md-7 col-xs-12">
+                            <input type="text" id="title" name="title" required="required" class="form-control col-md-7 col-xs-12">
                           </div>
                         </div>
                         <div class="form-group">
@@ -31,7 +43,7 @@
                           </label>
                           <div class="col-md-6 col-sm-6 col-xs-12">
                            
-                            <textarea id="textarea" required="required" name="textarea" class="form-control col-md-6 col-xs-12" style="margin: 0px; width: 627px; height: 184px;"></textarea>
+                            <textarea id="desc" required="required" name="desc" class="form-control col-md-6 col-xs-12" style="margin: 0px; width: 627px; height: 184px;"></textarea>
                           
                         </div>
               </div>
@@ -39,12 +51,12 @@
                           <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Status</label>
                           <div class="col-md-6 col-sm-6 col-xs-12">
                            <div class="form-group">
-                            <select class="form-control">
+                            <select class="form-control" name="status">
                               <option>Choose option</option>
-                              <option>Option one</option>
-                              <option>Option two</option>
-                              <option>Option three</option>
-                              <option>Option four</option>
+                              <option value="Option one">Option one</option>
+                              <option value="Option one">Option two</option>
+                              <option value="Option one">Option three</option>
+                              <option value="Option one">Option four</option>
                             </select>
                         </div>
                           </div>
@@ -53,12 +65,11 @@
                           <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Priority</label>
                           <div class="col-md-6 col-sm-6 col-xs-12">
                            <div class="form-group">
-                            <select class="form-control">
+                            <select class="form-control" name="priority">
                               <option>Choose option</option>
-                              <option>Option one</option>
-                              <option>Option two</option>
-                              <option>Option three</option>
-                              <option>Option four</option>
+                              <option value="High">High</option>
+                              <option value="Medium">Medium</option>
+                              <option value="Low">Low</option>
                             </select>
                         </div>
                           </div>
@@ -68,13 +79,14 @@
                           <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Assign To</label>
                           <div class="col-md-6 col-sm-6 col-xs-12">
                            <div class="form-group">
-                            <select class="form-control">
-                              <option>Select Project Manager</option>
-                              <option>Option one</option>
-                              <option>Option two</option>
-                              <option>Option three</option>
-                              <option>Option four</option>
-                            </select>
+                           @if ($managers->count())
+                            <select class="select2_single form-control" tabindex="-1" name="user_id">
+                            <option>Selct Project Manager</option>
+                            @foreach ($managers as $manager)
+                            <option value="{{ $manager->id }}"> {{ $manager->name }}</option>
+                            @endforeach
+                            @endif
+                          </select>
                         </div>
                           </div>
                         </div>
@@ -83,13 +95,14 @@
                           <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Project</label>
                           <div class="col-md-6 col-sm-6 col-xs-12">
                            <div class="form-group">
-                            <select class="form-control">
-                              <option>Select Project </option>
-                              <option>Option one</option>
-                              <option>Option two</option>
-                              <option>Option three</option>
-                              <option>Option four</option>
-                            </select>
+                           @if ($projects->count())
+                            <select class="select2_single form-control" tabindex="-1" name="project_id">
+                             <option>Selct Projects </option>
+                             @foreach ($projects as $project)
+                            <option value="{{ $project->id }}"> {{ $project->name }}</option>
+                            @endforeach
+                            @endif
+                          </select>
                         </div>
                           </div>
                         </div>
@@ -98,7 +111,7 @@
                           <label class="control-label col-md-3 col-sm-3 col-xs-12">Choose File<span class="required">*</span>
                           </label>
                           <div class="col-md-6 col-sm-6 col-xs-12">
-                            <input type="file" class="date-picker form-control col-md-7 col-xs-12" required="required" type="text">
+                            <input type="file" class="date-picker form-control col-md-7 col-xs-12" name="attached_path" required="required" >
                           </div>
                         </div>
                         <div class="ln_solid"></div>
@@ -108,8 +121,18 @@
                             <button type="submit" class="btn btn-success">Create</button>
                           </div>
                         </div>
-
-                      </form>
+                         <script src="{{ URL::asset('select2/dist/js/select2.full.min.js') }}"></script>
+                        <script>
+                        $(document).ready(function() {
+                          $(".select2_single").select2({
+                            
+                            allowClear: true
+                          });
+                          $(".select2_group").select2({});
+                        });
+                      </script>
+                      {{ Form::close() }}
+                      
                     </div>
                   </div>
                 </div>

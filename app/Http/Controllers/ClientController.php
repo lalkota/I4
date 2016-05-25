@@ -10,6 +10,8 @@ use Input;
 use Validator;
 use App\Client;
 use App\Role;
+use App\Project;
+use App\Employee;
 use Illuminate\Support\Facades\Redirect;
 
 /**
@@ -156,6 +158,8 @@ class ClientController extends Controller
      */
     public function createticketshow()
     {
-        return view('client.create_tickets');
+        $projects = Project::all();
+        $managers = Employee::manager()->get();
+        return view('client.create_tickets', compact('managers','projects'));
     }
 }

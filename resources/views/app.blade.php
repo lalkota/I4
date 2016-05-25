@@ -669,6 +669,7 @@
     <!-- /FullCalendar -->
 
      <script src="{{ URL::asset('jquery/dist/jquery.min.js') }}"></script>
+     <script src="{{ URL::asset('select2/dist/js/select2.full.min.js') }}"></script>
     <!-- Datatables -->
     <script src="{{ URL::asset('datatables.net/js/jquery.dataTables.min.js') }}"></script>
     <script src="{{ URL::asset('datatables.net-bs/js/dataTables.bootstrap.min.js') }}"></script>
@@ -749,6 +750,16 @@
         });
 
         TableManageButtons.init();
+      });
+    </script>
+
+     <script>
+      $(document).ready(function() {
+        $(".select2_single").select2({
+          
+          allowClear: true
+        });
+        $(".select2_group").select2({});
       });
     </script>
     

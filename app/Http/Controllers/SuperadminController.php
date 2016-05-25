@@ -130,7 +130,8 @@ class SuperadminController extends Controller
         return view('admin.show_by_date', compact('projects'));
     } 
 
-    return view('admin.showed_project_list', compact('projects'));
+    return view('admin.
+        ', compact('projects'));
   }
 
     

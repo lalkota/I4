@@ -17,9 +17,6 @@
    */
   class EmployeeController extends Controller
   {
-
-
-
     /**
      * Display a listing of the resource.
      *
@@ -30,7 +27,6 @@
       $employees = Employee::paginate(3);
       return view('employee.employee_list', compact('employees'));
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -41,7 +37,6 @@
       $roles = Role::all();
       return view('employee.employe_registration', compact('roles'));
     }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -160,7 +155,7 @@
       public function attshow()
       {
         $employees = Employee::all();
-        return view('employee.attendance', compact('employee'));
+        return view('employee.attendance', compact('employees'));
       }
 
 

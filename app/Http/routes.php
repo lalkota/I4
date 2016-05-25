@@ -40,6 +40,8 @@ Route::resource('employee', 'EmployeeController');
 Route::get('roleadmin', 'RoleadminController@show');
 
 Route::resource('attendance', 'AttendanceController');
+Route::post('attendance/list', 'AttendanceController@listattendence');
+Route::post('attendance/list_status', 'AttendanceController@listattendencestatus');
 
 Route::resource('notification', 'NotificationController');
 

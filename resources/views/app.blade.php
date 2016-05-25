@@ -258,7 +258,7 @@
     <script>
       $(document).ready(function() {
         $(".select2_single").select2({
-          placeholder: "Select a state",
+          placeholder: "Select Employee",
           allowClear: true
         });
         $(".select2_group").select2({});
@@ -273,7 +273,7 @@
     <script>
       $(document).ready(function() {
         $(".select2_single").select2({
-          placeholder: "Select a state",
+          placeholder: "Select Employee",
           allowClear: true
         });
         $(".select2_group").select2({});

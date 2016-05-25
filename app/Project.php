@@ -37,4 +37,22 @@ class Project extends Model
 		return $this->hasOne('App\Client','id','client');
 	}
 
+	    /**
+     * @param $query
+     * @return mixed
+     */
+    public function scopeOnGoingProjects($query)
+    {
+        return $query->where('start_date','<=', date('Y-m-d'))->where('end_date','>=',date('Y-m-d'));
+    }
+
+    /**
+     * @param $query
+     * @return mixed
+     */
+    public function scopeCompletedProjects($query)
+    {
+        return $query->where('end_date','<', date('Y-m-d'));
+    }
+
 }

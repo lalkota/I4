@@ -1,4 +1,3 @@
-
 <?php
 
 namespace App;
@@ -11,10 +10,9 @@ class Attendance extends Model
 	protected $guarded = array('id');
 	public $timestamps  = false;
 
-	protected $fillable = array('emp_id', '	attend');
+	protected $fillable = array('emp_id', 'attend', 'current_date');
 
 	public static $rules = array(
-	'emp_id' => 'required',
-	'attend' => 'required'
+	'emp_id' => 'required'
 	);
 }

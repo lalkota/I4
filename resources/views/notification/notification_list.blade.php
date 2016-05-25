@@ -15,27 +15,32 @@
             </div>
             <div class="x_content">
             <!-- start project list -->
+            @if ($notifications->count())
               <table class="table table-striped projects">
                 <thead>
                   <tr>
                     <th>From</th>
                     <th>Title</th>
+                    <th>Description</th>
                     <th>Date</th>
                     <th>#Edit</th>
                   </tr>
                 </thead>
                 <tbody>
+                @foreach ($notifications as $notification)
                   <tr>
-                    <td>kumar</td>
-                    <td>meassage title</td>
-                    <td>2016-2-25</td>
-                    <td>view</td>
+                    <td>{{ App\Employee::find($notification->notification->from)->name }}</td>
+                    <td>{{ $notification->notification->title }}</td>
+                    <td><p> {{  str_limit($notification->notification->desc, 50, "...") }} </p></td>
+                    <td>{{ $notification->notification->created_date }}</td>
+                    <td>{{ link_to_route('notification.show', ' View', array($notification->id), array('class' => 'btn btn-primary fa fa-folder')) }}</td>
                   </tr>
+                @endforeach 
                 </tbody>
               </table>
-              
+              {!! $notifications->render() !!}
             <!-- end project list -->
-             
+              @endif
             </div>
           </div>
         </div>

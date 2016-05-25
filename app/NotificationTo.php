@@ -11,4 +11,10 @@ class NotificationTo extends Model
 	public $timestamps  = false;
 
 	protected $fillable = array('notification_id', 'user_id');
+
+
+	public function notification() 
+	{
+		return $this->hasOne('App\Notification','id','notification_id');
+	}
 }

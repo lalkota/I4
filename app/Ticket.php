@@ -19,7 +19,7 @@ class Ticket extends Model
         'priority',
         'user_id' ,
         'project_id',
-        'attached_path'
+        'client_id'
         
     );
 
@@ -29,8 +29,10 @@ class Ticket extends Model
         'status' => 'required',
         'priority' => 'required',
         'user_id' => 'required',
-        'project_id' => 'required',
-        'attached_path' => 'required'
+        'project_id' => 'required'
         
     );
+
+
+    
 }

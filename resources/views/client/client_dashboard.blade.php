@@ -32,7 +32,9 @@
                 <div class="tile-stats">
                   <div class="icon"><i class="fa fa-check-square-o"></i>
                   </div>
-                  <div class="count">179</div>
+                  
+
+                  <div class="count"> {{ ($active_tickets->count()) }}</div>
 
                   <h3>Tickets</h3>
                   <p>Active</p>
@@ -42,7 +44,7 @@
                 <div class="tile-stats">
                   <div class="icon"><i class="fa fa-check-square-o"></i>
                   </div>
-                  <div class="count">179</div>
+                  <div class="count">{{ ($closed_tickets->count()) }}</div>
 
                   <h3>Tickets</h3>
                   <p>Closed</p>
@@ -224,57 +226,30 @@
                     </ul>
                     <div class="clearfix"></div>
                   </div>
+                   @if ($all_tickets->count())
                   <div class="x_content">
+                  @foreach ($all_tickets as $all_ticket)
                     <article class="media event">
                       <a class="pull-left date">
-                        <p class="month">April</p>
-                        <p class="day">23</p>
+                        <p class="month">@if ($all_ticket->created_date != "")
+                            @foreach(explode(',', $all_ticket->created_date) as $info) 
+                              @if($info[6]==5) {{ 'May' }} @endif
+                            @endforeach
+                          @endif  
+                        </p>
+                       <p> @if ($all_ticket->created_date != "")
+                            @foreach(explode(',', $all_ticket->created_date) as $info) 
+                              <p class="day">{{$info[8]}}{{$info[9]}} </p>
+                            @endforeach
+                          @endif  </p>
                       </a>
                       <div class="media-body">
-                        <a class="title" href="#">Item One Title</a>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <a class="title" href="#">{{ $all_ticket -> title }}</a>
+                        <p>{{ $all_ticket -> desc }}</p>
                       </div>
                     </article>
-                    <article class="media event">
-                      <a class="pull-left date">
-                        <p class="month">April</p>
-                        <p class="day">23</p>
-                      </a>
-                      <div class="media-body">
-                        <a class="title" href="#">Item Two Title</a>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                      </div>
-                    </article>
-                    <article class="media event">
-                      <a class="pull-left date">
-                        <p class="month">April</p>
-                        <p class="day">23</p>
-                      </a>
-                      <div class="media-body">
-                        <a class="title" href="#">Item Two Title</a>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                      </div>
-                    </article>
-                    <article class="media event">
-                      <a class="pull-left date">
-                        <p class="month">April</p>
-                        <p class="day">23</p>
-                      </a>
-                      <div class="media-body">
-                        <a class="title" href="#">Item Two Title</a>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                      </div>
-                    </article>
-                    <article class="media event">
-                      <a class="pull-left date">
-                        <p class="month">April</p>
-                        <p class="day">23</p>
-                      </a>
-                      <div class="media-body">
-                        <a class="title" href="#">Item Three Title</a>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                      </div>
-                    </article>
+                    @endforeach
+                    @endif
                   </div>
                 </div>
               </div>

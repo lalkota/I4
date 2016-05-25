@@ -12,6 +12,8 @@ use App\Client;
 use App\Role;
 use App\Project;
 use App\Employee;
+use App\Ticket;
+use Auth;
 use Illuminate\Support\Facades\Redirect;
 
 /**
@@ -25,8 +27,15 @@ class ClientController extends Controller
      */
     public function index()
     {
-        $clients = Client::paginate(3);
-        return view('client.client_list', compact('clients'));
+        
+        $status ="Open";
+        $closed_status = "Closed";
+        $active_tickets = Ticket::where('status','=', $status)->get();
+        $closed_tickets = Ticket::where('status','=', $closed_status)->get();
+        $all_tickets =  Ticket::all();
+        
+
+        return view('client.client_dashboard', compact('active_tickets', 'closed_tickets', 'all_tickets'));
     }
 
     /**
@@ -150,7 +159,8 @@ class ClientController extends Controller
      */
     public function ticketshow()
     {
-        return view('client.ticket_status');
+        $tickets = Ticket::all();
+        return view('client.ticket_status', compact('tickets'));
     }
 
     /**
@@ -158,8 +168,9 @@ class ClientController extends Controller
      */
     public function createticketshow()
     {
-        $projects = Project::all();
-        $managers = Employee::manager()->get();
-        return view('client.create_tickets', compact('managers','projects'));
+        $user_id = Auth::user()->ref_id;
+        $projects = Project::where('client', '=', $user_id)->get();
+        return view('client.create_tickets', compact('projects'));
     }
+
 }

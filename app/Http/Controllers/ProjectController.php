@@ -36,7 +36,7 @@
            if ($user_id == 1){
             return view('admin.show_by_name', compact('projects'));
            }else{
-            $projects = Project:: (3);
+            $projects = Project::paginate(3);
             return view('project.projects_list', compact('projects'));
            }
           

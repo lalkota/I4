@@ -21,7 +21,10 @@ Route::controllers([
 
 Route::get('client/ticket', 'ClientController@ticketshow');
 Route::get('client/create_ticket', 'ClientController@createticketshow');
+Route::get('client/upload', 'ClientController@uploadshow');
 Route::resource('client', 'ClientController');
+
+Route::post('test', 'TestController@index');
 
 Route::get('employee/attendance', 'EmployeeController@attshow');
 

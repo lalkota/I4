@@ -32,4 +32,9 @@ class Role extends Model
     {
         return $this->belongsTo('App\Menu', 'id', 'parent_id');
     }
+
+    public function scopeSuperadminRole($query)
+    {
+        return $query->where('id', 2);
+    }
 }

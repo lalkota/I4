@@ -44,28 +44,27 @@
                               </th>
                             </tr>
                           </thead>
-
+                          @if ($tickets->count())
+                           @foreach ($tickets as $ticket)
                           <tbody>
                             <tr class="odd pointer">
-                              <td class=" ">121000039</td>
-                              <td>title</td>
-                              <td class=" ">May 23, 2014 11:30:12 PM</td>
-                              <td class=" ">121000208 <i class="success fa fa-long-arrow-up"></i>
+                              <td class=" ">{{ $ticket->id }}</td>
+                              <td>{{ $ticket->title }}</td>
+                              <td class=" ">{{ $ticket->created_date }}</td>
+                              <td class=" ">{{ $ticket->status }}<i class="success fa fa-long-arrow-up"></i>
                               </td>
-                              <td class=" last"><a href="#" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> View </a>
-                              </td>
-                            </tr>
-                            <tr class="even pointer">
-                              <td class=" ">121000038</td>
-                              <td>title</td>
-                              <td class=" ">May 24, 2014 10:55:33 PM</td>
-                              <td class=" ">121000203 <i class="success fa fa-long-arrow-up"></i>
-                              </td>
-                              <td class=" last"><a href="#" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> View </a>
+                              <td class=" last"> 
+                              {{ link_to_route('ticket.show', ' View', array($ticket->id), array('class' => 'btn btn-primary fa fa-folder')) }}
+                              {{ link_to_route('ticket.edit', ' Edit', array($ticket->id), array('class' => 'btn btn-info fa fa-pencil')) }}
+                              {{ Form::open(array('method' => 'DELETE', 'route' => array('ticket.destroy', $ticket->id))) }}                       
+                                {{ Form::submit('Delete', array('class' => 'btn btn-danger fa fa-trash-o')) }}
+                                {{ Form::close() }}
+                                
                               </td>
                             </tr>
-                            
                           </tbody>
+                           @endforeach  
+                            @endif
                         </table>
                       </div>
                     </div>

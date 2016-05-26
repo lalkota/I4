@@ -41,6 +41,13 @@ class Employee extends Model
     );
 
 
+
+public function scopeRoleAdminEmployee($query)
+{
+    return $query->where('designation', 2);
+}
+
+
     /**
      * @param $query
      * @return mixed
@@ -49,6 +56,7 @@ class Employee extends Model
     {
         return $query->where('designation', 3);
     }
+
 
     /**
      * @param $query

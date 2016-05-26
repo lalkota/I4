@@ -21,7 +21,10 @@ Route::controllers([
 
 Route::get('client/ticket', 'ClientController@ticketshow');
 Route::get('client/create_ticket', 'ClientController@createticketshow');
+Route::get('client/upload', 'ClientController@uploadshow');
 Route::resource('client', 'ClientController');
+
+Route::post('test', 'TestController@index');
 
 Route::get('employee/attendance', 'EmployeeController@attshow');
 
@@ -35,6 +38,14 @@ Route::get('employee/employee_allowence', 'EmployeeController@allowenceshow');
 Route::get('employee/employee_registration', 'EmployeeController@registrationshow');
 Route::resource('employee', 'EmployeeController');
 
+Route::get('admin/show_by_name', 'SuperadminController@showProjects');
+Route::get('admin/show_by_date', 'SuperadminController@showProjectsByDates');
+
+Route::post('admin/show_by_date', 'SuperadminController@showProjectsByDate');
+
+Route::resource('admin', 'SuperadminController');
+
+Route::resource('ticket', 'TicketController');
 
 
 Route::get('roleadmin', 'RoleadminController@show');

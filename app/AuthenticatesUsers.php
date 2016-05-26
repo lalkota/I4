@@ -121,7 +121,8 @@ trait AuthenticatesUsers
         \Session::set('menu',$menu->BuildMenuFromCollection());
         //dd(\Session::get('menu'));
         $redirectPath = $homePage?$homePage:$this->redirectPath();
-        return redirect()->intended($redirectPath);    }
+        return redirect()->intended($redirectPath);    
+    }
 
     /**
      * Get the failed login response instance.

@@ -1,4 +1,5 @@
 <?php
+ 
   namespace App\Http\Controllers;
 
   use Illuminate\Http\Request;
@@ -8,6 +9,8 @@
   use Validator;
   use App\Employee;
   use App\Client;
+  use App\Role;
+  use Auth;
 
   use Illuminate\Support\Facades\Redirect;
   use App\Project;
@@ -15,6 +18,7 @@
 
   class ProjectController extends Controller
   {
+
 
         /**
        * Display a listing of the resource.
@@ -25,9 +29,17 @@
         {
 
           $projects = Project::all();
-          $projects = Project::paginate(3);
-
-          return view('project.projects_list', compact('projects'));
+          
+          $user_id = Auth::user()->id;
+          
+         
+           if ($user_id == 1){
+            return view('admin.show_by_name', compact('projects'));
+           }else{
+            $projects = Project::paginate(3);
+            return view('project.projects_list', compact('projects'));
+           }
+          
         }
 
       /**

@@ -10,6 +10,7 @@
   use Illuminate\Support\Facades\Redirect;
   use App\Role;
   use App\User;
+  use App\Attendance;
 
   /**
    * Class EmployeeController
@@ -154,8 +155,10 @@
        */
       public function attshow()
       {
+        $timestamps  = date('Y-m-d');
         $employees = Employee::all();
-        return view('employee.attendance', compact('employees'));
+        $attendance = Attendance::where('current_date','=', $timestamps)->get();
+        return view('employee.attendance', compact('employees','attendance'));
       }
 
 

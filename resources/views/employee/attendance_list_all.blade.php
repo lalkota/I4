@@ -14,7 +14,7 @@
 
       <form  method="POST" action="http://localhost/I4/public/attendance/list" class="form-horizontal form-label-left" novalidate>
       <div style="margin-bottom:10px; background-color: #EDEDED; padding:20px; border-radius: 5px;">
-      <p><span style="font-size: 10px;color:red;">Please select Employee name, From Date and To Date.</span></p>
+      <p><span style="font-size: 10px;color:#73879C;">Please select Employee name, From Date and To Date.</span></p>
       <label class="control-label col-md-1 col-sm-1 col-xs-12" for="from_date">Employee
       </label>
       <div class="col-md-2 col-sm-2 col-xs-12">
@@ -39,7 +39,7 @@
 
       <form  method="POST" action="http://localhost/I4/public/attendance/list_status" class="form-horizontal form-label-left" novalidate>
       <div style="margin-bottom:10px; background-color: #EDEDED; padding:20px; border-radius: 5px;">
-      <p><span style="font-size: 10px;color:red;">Please select Attendance Status and Date.</span></p>
+      <p><span style="font-size: 10px;color:#73879C;">Please select Attendance Status and Date.</span></p>
       <label class="control-label col-md-1 col-sm-1 col-xs-12" for="from_date">Attendance
       </label>
       <div class="col-md-2 col-sm-2 col-xs-12">
